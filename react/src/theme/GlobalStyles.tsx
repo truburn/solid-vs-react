@@ -26,7 +26,7 @@ export function GlobalStyles() {
             fontSize: theme.baseSize,
             fontFamily: theme.fonts.default.name,
           },
-          "#cookbook": {
+          "#root": {
             margin: 0,
             padding: 0,
             width: "100vw",

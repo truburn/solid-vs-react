@@ -1,5 +1,5 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
-import { AppLayout } from "@/layout/AppLayout";
+import { PageWrapper } from "@/layout/PageWrapper";
 import { EditRecipe } from "@/routes/EditRecipe";
 import { ErrorPage } from "@/routes/ErrorPage";
 import { PageNotFound } from "@/routes/PageNotFound";
@@ -12,7 +12,7 @@ function redirectToList() {
 
 export const router = createBrowserRouter([
   {
-    element: <AppLayout />,
+    element: <PageWrapper />,
     errorElement: <ErrorPage />,
     children: [
       {
