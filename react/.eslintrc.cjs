@@ -23,5 +23,7 @@ module.exports = {
       "warn",
       { allowConstantExport: true },
     ],
+    "react/no-unknown-property": ["error", { ignore: ["css"] }],
+    "@typescript-eslint/no-empty-interface": "off",
   },
 };
