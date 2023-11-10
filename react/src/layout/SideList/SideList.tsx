@@ -1,4 +1,4 @@
-import { useNavigationStyles } from "@/layout/Navigation";
+import { useNavigationStyles } from "@/layout/SideList";
 
 export function Navigation() {
   const classes = useNavigationStyles();
