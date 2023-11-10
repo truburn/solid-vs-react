@@ -1,4 +1,4 @@
-import { faCopyright } from '@fortawesome/pro-light-svg-icons';
+import { faCopyright } from "@fortawesome/pro-light-svg-icons";
 import { useFooterStyles } from "@/layout/Footer";
 import { Icon } from "@/library/Icon";
 
