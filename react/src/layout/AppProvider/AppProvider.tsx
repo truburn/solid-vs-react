@@ -2,18 +2,17 @@ import { useState, ReactNode, useMemo } from "react";
 import { AppContext, AppContextProps } from "@/layout/AppProvider";
 
 export function AppProvider(props: { children: ReactNode }) {
-  const [sidePanelContent, setSidePanelContent] =
-    useState<ReactNode>("Side Panel Content");
-  const [searchString, setSearchString] = useState<string>("Search String");
+  const [sidePanelContent, setSidePanelContent] = useState<any>(null);
+  const [showList, setShowList] = useState<boolean>(false);
 
   const value = useMemo<AppContextProps>(
     () => ({
       sidePanelContent,
       setSidePanelContent,
-      searchString,
-      setSearchString,
+      showList,
+      setShowList,
     }),
-    [sidePanelContent, setSidePanelContent, searchString, setSearchString],
+    [sidePanelContent, setSidePanelContent, showList, setShowList],
   );
 
   return (

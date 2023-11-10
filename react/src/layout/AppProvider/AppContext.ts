@@ -1,10 +1,10 @@
-import { createContext, useContext, ReactNode } from "react";
+import { createContext, useContext } from "react";
 
 export interface AppContextProps {
-  sidePanelContent: ReactNode;
-  setSidePanelContent: React.Dispatch<React.SetStateAction<ReactNode>>;
-  searchString: string;
-  setSearchString: React.Dispatch<React.SetStateAction<string>>;
+  sidePanelContent: any;
+  setSidePanelContent: React.Dispatch<React.SetStateAction<any>>;
+  showList: boolean;
+  setShowList: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export const AppContext = createContext<AppContextProps | null>(null);
 

@@ -1,6 +1,9 @@
 import { PageHeader } from "@/library/PageHeader";
+import { useClearSides } from "@/utils/common.hooks";
 
 export function PageNotFound() {
+  useClearSides();
+
   return (
     <>
       <PageHeader title="404 - Page Not Found" />
