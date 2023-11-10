@@ -1,5 +1,6 @@
 import { useClearSides } from "@/utils/common.hooks";
 import { PageHeader } from "@/library/PageHeader";
+import { Scrollbar } from "@/library/Scrollbar";
 
 export function RecipeList() {
   useClearSides();
@@ -7,7 +8,7 @@ export function RecipeList() {
   return (
     <>
       <PageHeader title="My Favorite Recipes" />
-      <div>A list of recipes</div>
+      <Scrollbar>A list of recipes</Scrollbar>
     </>
   );
 }
