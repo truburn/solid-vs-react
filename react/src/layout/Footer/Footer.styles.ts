@@ -14,6 +14,9 @@ export function useFooterStyles() {
       color: theme.colors.standard.altMain,
       fontSize: "0.875rem",
       padding: `${theme.spacing.medium}px ${theme.spacing.large}px`,
+      "& p": {
+        margin: 0,
+      },
     });
   }, [theme]);
 
