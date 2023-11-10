@@ -31,13 +31,13 @@ export const router = createBrowserRouter([
             children: [
               {
                 index: true,
-                loader: () => redirect("/recipe/new")
+                loader: () => redirect("/recipe/new"),
               },
               {
                 path: ":id",
                 element: <EditRecipe />,
-              }
-            ]
+              },
+            ],
           },
           {
             path: ":id",
@@ -45,10 +45,10 @@ export const router = createBrowserRouter([
           },
         ],
       },
+      {
+        path: "*",
+        element: <PageNotFound />,
+      },
     ],
-  },
-  {
-    path: "*",
-    element: <PageNotFound />,
   },
 ]);
