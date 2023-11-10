@@ -22,6 +22,12 @@ export interface MCTheme {
     width: number;
     radius: number;
     color: string;
+    drawn: {
+      borderTopLeftRadius: string;
+      borderTopRightRadius: string;
+      borderBottomRightRadius: string;
+      borderBottomLeftRadius: string;
+    };
   };
   colors: {
     background: string;

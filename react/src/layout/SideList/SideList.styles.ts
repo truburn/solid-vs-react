@@ -1,14 +1,14 @@
 import { useMemo } from "react";
 import { css, SerializedStyles, useTheme } from "@emotion/react";
 
-export function useNavigationStyles() {
+export function useSideListStyles() {
   const theme = useTheme();
 
   const root = useMemo<SerializedStyles>(() => {
     return css({
       display: "flex",
       flexDirection: "column",
-      width: 250,
+      border: "dotted 1px",
     });
   }, []);
 

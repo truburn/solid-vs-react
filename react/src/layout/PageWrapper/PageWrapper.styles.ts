@@ -39,10 +39,12 @@ export function usePageStyles() {
   const outlet = useMemo<SerializedStyles>(() => {
     return css({
       display: "flex",
+      flexDirection: "column",
       alignItems: "stretch",
       justifyContent: "flex-start",
       overflow: "hidden",
       width: 840,
+      minWidth: 640,
       margin: `${theme.spacing.large}px 0px`,
       borderStyle: "solid",
       borderWidth: theme.border.width,
@@ -58,7 +60,7 @@ export function usePageStyles() {
       flexDirection: "column",
       alignItems: "stretch",
       justifyContent: "flex-start",
-      width: 350,
+      maxWidth: 350,
       margin: `${theme.spacing.large}px 0px`,
     });
   }, [theme]);

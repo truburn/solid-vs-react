@@ -1,11 +1,10 @@
-import { useAppContext } from "@/layout/AppProvider";
 import { usePageStyles } from "@/layout/PageWrapper/PageWrapper.styles";
 import { Footer } from "@/layout/Footer";
-import { Navigation } from "@/layout/SideList";
+import { SideList } from "@/layout/SideList";
 import { Outlet } from "react-router-dom";
+import { InfoPanel } from "@/layout/InfoPanel";
 
 export function PageWrapper() {
-  const { sidePanelContent } = useAppContext();
   const classes = usePageStyles();
 
   return (
@@ -14,12 +13,14 @@ export function PageWrapper() {
         <div css={classes.content}>
           <div css={classes.page}>
             <div css={classes.sidePanel}>
-              <Navigation />
+              <SideList />
             </div>
             <div css={classes.outlet}>
               <Outlet />
             </div>
-            <div css={classes.sidePanel}>{sidePanelContent}</div>
+            <div css={classes.sidePanel}>
+              <InfoPanel />
+            </div>
           </div>
         </div>
       </div>

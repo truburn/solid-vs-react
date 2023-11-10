@@ -10,6 +10,12 @@ export const theme: Theme = {
     width: 1,
     color: "#d2d6ec",
     radius: 4,
+    drawn: {
+      borderTopLeftRadius: "205px 25px",
+      borderTopRightRadius: "25px 205px",
+      borderBottomRightRadius: "205px 25px",
+      borderBottomLeftRadius: "25px 205px",
+    },
   },
   colors,
   fonts: {

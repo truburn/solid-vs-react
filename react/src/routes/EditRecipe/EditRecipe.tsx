@@ -1,5 +1,10 @@
 import { EditRecipeProps } from "@/routes/EditRecipe";
+import { PageHeader } from "@/library/PageHeader";
 
 export function EditRecipe(props: EditRecipeProps) {
-  return <div>{`${props.isNew ? "New" : "Edit"} Recipe`}</div>;
+  return (
+    <>
+      <PageHeader>{`${props.isNew ? "New" : "Edit"} Recipe`}</PageHeader>
+    </>
+  );
 }

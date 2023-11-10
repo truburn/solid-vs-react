@@ -1,7 +1,7 @@
-import { useNavigationStyles } from "@/layout/SideList";
+import { useSideListStyles } from "@/layout/SideList";
 
-export function Navigation() {
-  const classes = useNavigationStyles();
+export function SideList() {
+  const classes = useSideListStyles();
 
-  return <div css={classes.root}>Recipe List</div>;
+  return <div css={classes.root}>Side List</div>;
 }
