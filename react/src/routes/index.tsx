@@ -6,10 +6,6 @@ import { PageNotFound } from "@/routes/PageNotFound";
 import { RecipeList } from "@/routes/RecipeList";
 import { RecipePage } from "@/routes/RecipePage";
 
-function redirectToList() {
-  return redirect("/");
-}
-
 export const router = createBrowserRouter([
   {
     element: <PageWrapper />,
@@ -24,27 +20,28 @@ export const router = createBrowserRouter([
         children: [
           {
             index: true,
-            loader: redirectToList,
-          },
-          {
-            path: ":id",
-            element: <RecipePage />,
-            loader: ({ params }) => {
-              if (!params.id) return redirectToList();
-              return null;
-            },
+            loader: () => redirect("/"),
           },
           {
             path: "new",
             element: <EditRecipe isNew />,
           },
           {
-            path: "edit/:id",
-            element: <EditRecipe />,
-            loader: ({ params }) => {
-              if (!params.id) return redirect("/recipe/new");
-              return null;
-            },
+            path: "edit",
+            children: [
+              {
+                index: true,
+                loader: () => redirect("/recipe/new")
+              },
+              {
+                path: ":id",
+                element: <EditRecipe />,
+              }
+            ]
+          },
+          {
+            path: ":id",
+            element: <RecipePage />,
           },
         ],
       },
