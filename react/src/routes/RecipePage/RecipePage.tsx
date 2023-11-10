@@ -1,3 +1,10 @@
+import { PageHeader } from "@/library/PageHeader";
+
 export function RecipePage() {
-  return <div>Recipe Page</div>;
+  return (
+    <>
+      <PageHeader title="Recipe" />
+      <div>Recipe content</div>
+    </>
+  );
 }

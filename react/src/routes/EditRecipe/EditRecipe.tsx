@@ -4,7 +4,8 @@ import { PageHeader } from "@/library/PageHeader";
 export function EditRecipe(props: EditRecipeProps) {
   return (
     <>
-      <PageHeader>{`${props.isNew ? "New" : "Edit"} Recipe`}</PageHeader>
+      <PageHeader title={`${props.isNew ? "New" : "Edit"} Recipe`} />
+      <div>Add/Edit Form</div>
     </>
   );
 }
