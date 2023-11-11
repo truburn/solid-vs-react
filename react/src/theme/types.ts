@@ -48,6 +48,10 @@ export interface MCTheme {
     body: ThemeFont;
     heading: ThemeFont;
   };
+  scrollbar: {
+    width: number;
+    borderRadius: number;
+  };
   spacing: {
     thin: number;
     small: number;

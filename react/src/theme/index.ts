@@ -34,6 +34,10 @@ export const theme: Theme = {
       name: "Rock Salt",
     },
   },
+  scrollbar: {
+    width: 12,
+    borderRadius: 12,
+  },
   spacing: {
     thin: 2,
     small: 4,
