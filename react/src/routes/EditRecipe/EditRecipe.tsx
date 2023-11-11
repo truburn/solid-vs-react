@@ -5,11 +5,13 @@ import { Scrollbar } from "@/library/Scrollbar";
 
 export function EditRecipe(props: EditRecipeProps) {
   useClearSides();
-  
+
   return (
     <>
       <PageHeader title={`${props.isNew ? "New" : "Edit"} Recipe`} />
-      <Scrollbar>Add/Edit Form</Scrollbar>
+      <Scrollbar>
+        <p>Add/Edit Form</p>
+      </Scrollbar>
     </>
   );
 }

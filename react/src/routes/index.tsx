@@ -14,6 +14,14 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <RecipeList />,
+        errorElement: <ErrorPage />,
+        loader: async () => {
+          const response = await fetch(
+            "https://recipes-api.jsburn.com/recipes",
+          );
+          const data = await response.json();
+          return data;
+        },
       },
       {
         path: "/recipe",

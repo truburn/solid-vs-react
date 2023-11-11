@@ -37,6 +37,11 @@ export function GlobalStyles() {
             alignItems: "stretch",
             justifyContent: "space-between",
           },
+          p: {
+            fontFamily: theme.fonts.body.name,
+            margin: 0,
+            marginBottom: theme.spacing.wide,
+          },
         }),
       ]}
     />
