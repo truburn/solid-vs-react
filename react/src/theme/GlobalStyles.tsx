@@ -42,6 +42,14 @@ export function GlobalStyles() {
             margin: 0,
             marginBottom: theme.spacing.wide,
           },
+          a: {
+            fontFamily: theme.fonts.default.name,
+            fontWeight: theme.fonts.default.weight?.bold,
+            color: theme.colors.secondary.altMain,
+            '&:hover': {
+              color: theme.colors.secondary.main,
+            }
+          }
         }),
       ]}
     />
