@@ -1,69 +1,58 @@
-import { useMemo } from "react";
 import { css, SerializedStyles, useTheme } from "@emotion/react";
 
 export function usePageStyles() {
   const theme = useTheme();
 
-  const root = useMemo<SerializedStyles>(() => {
-    return css({
-      flex: 1,
-      display: "flex",
-      flexDirection: "row",
-      alignItems: "stretch",
-      justifyContent: "center",
-      overflow: "hidden",
-    });
-  }, []);
+  const root: SerializedStyles = css({
+    flex: 1,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "stretch",
+    justifyContent: "center",
+    overflow: "hidden",
+  });
 
-  const content = useMemo<SerializedStyles>(() => {
-    return css({
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "stretch",
-      justifyContent: "space-between",
-      overflow: "hidden",
-    });
-  }, []);
+  const content: SerializedStyles = css({
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "stretch",
+    justifyContent: "space-between",
+    overflow: "hidden",
+  });
 
-  const page = useMemo<SerializedStyles>(() => {
-    return css({
-      flex: 1,
-      display: "flex",
-      flexDirection: "row",
-      alignItems: "stretch",
-      justifyContent: "space-between",
-      overflow: "hidden",
-    });
-  }, []);
+  const page: SerializedStyles = css({
+    flex: 1,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "stretch",
+    justifyContent: "space-between",
+    overflow: "hidden",
+  });
 
-  const outlet = useMemo<SerializedStyles>(() => {
-    return css({
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "stretch",
-      justifyContent: "flex-start",
-      overflow: "hidden",
-      width: 840,
-      minWidth: 640,
-      margin: `${theme.spacing.large}px 0px`,
-      borderStyle: "solid",
-      borderWidth: theme.border.width,
-      borderRadius: theme.border.radius,
-      borderColor: theme.colors.panel.border,
-      background: theme.colors.panel.background,
-    });
-  }, [theme]);
+  const outlet: SerializedStyles = css({
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "stretch",
+    justifyContent: "flex-start",
+    overflow: "hidden",
+    width: 840,
+    minWidth: 640,
+    margin: `${theme.spacing.large}px 0px`,
+    borderStyle: "solid",
+    borderWidth: theme.border.width,
+    borderRadius: theme.border.radius,
+    borderColor: theme.colors.panel.border,
+    background: theme.colors.panel.background,
+  });
 
-  const sidePanel = useMemo<SerializedStyles>(() => {
-    return css({
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "stretch",
-      justifyContent: "flex-start",
-      maxWidth: 350,
-      margin: `${theme.spacing.large}px 0px`,
-    });
-  }, [theme]);
+  const sidePanel: SerializedStyles = css({
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "stretch",
+    justifyContent: "flex-start",
+    maxWidth: 350,
+    margin: `${theme.spacing.large}px 0px`,
+  });
 
   return { root, content, page, outlet, sidePanel };
 }
