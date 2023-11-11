@@ -3,6 +3,7 @@ import { useClearSides } from "@/utils/common.hooks";
 import { PageHeader } from "@/library/PageHeader";
 import { Scrollbar } from "@/library/Scrollbar";
 import { useLoaderData } from "react-router-dom";
+import { RecipeTools } from "@/library/RecipeTools";
 
 export function RecipeList() {
   useClearSides();
@@ -11,6 +12,7 @@ export function RecipeList() {
   return (
     <>
       <PageHeader title="My Favorite Recipes" />
+      <RecipeTools tools={["add"]} />
       <Scrollbar>
         {recipes.map(({ recipeID, name }) => (
           <p key={recipeID}>{name}</p>

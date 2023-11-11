@@ -43,6 +43,7 @@ export function usePageStyles() {
     borderRadius: theme.border.radius,
     borderColor: theme.colors.panel.border,
     background: theme.colors.panel.background,
+    position: "relative",
   });
 
   const sidePanel: SerializedStyles = css({

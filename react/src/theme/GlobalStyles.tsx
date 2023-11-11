@@ -46,10 +46,10 @@ export function GlobalStyles() {
             fontFamily: theme.fonts.default.name,
             fontWeight: theme.fonts.default.weight?.bold,
             color: theme.colors.secondary.altMain,
-            '&:hover': {
+            "&:hover": {
               color: theme.colors.secondary.main,
-            }
-          }
+            },
+          },
         }),
       ]}
     />
