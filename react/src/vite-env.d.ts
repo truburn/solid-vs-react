@@ -62,10 +62,10 @@ interface Recipe {
   updated?: Date;
   servings?: {
     qty: number;
-    unit: MeasureUnit;
+    unit?: MeasureUnit;
   };
   servingSize?: {
     qty: number;
-    unit: MeasureUnit;
+    unit?: MeasureUnit;
   };
 }
