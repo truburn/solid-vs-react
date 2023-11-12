@@ -25,7 +25,16 @@ export function Scrollbar(props: ScrollbarProps) {
   return (
     <div css={classes.root}>
       <div css={classes.contentWrapper}>
-        <div css={classes.content} ref={contentRef} onScroll={moveThumb}>
+        <div 
+          css={classes.content} 
+          ref={contentRef} 
+          onScroll={moveThumb}
+          style={{
+            ...(thumbStyles.display === 'none' && {
+              marginRight: 0
+            })
+          }}
+        >
           {props.children}
         </div>
       </div>
