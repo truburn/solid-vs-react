@@ -86,6 +86,7 @@ export function useRecipeCardStyles() {
       margin: `0 ${theme.spacing.thin}px`,
       padding: "0 0.5rem",
       fontSize: "0.75rem",
+      fontWeight: theme.fonts.default.weight?.light,
       background: theme.colors.secondary.altContrast,
       color: theme.colors.secondary.altMain,
       whiteSpace: "nowrap",
