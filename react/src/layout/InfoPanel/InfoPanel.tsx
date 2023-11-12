@@ -6,5 +6,6 @@ export function InfoPanel() {
   const classes = useInfoPanelStyles();
 
   if (!sidePanelContent) return null;
-  return <div css={classes.root}>Info Panel</div>;
+
+  return <div css={classes.root}>{sidePanelContent}</div>;
 }

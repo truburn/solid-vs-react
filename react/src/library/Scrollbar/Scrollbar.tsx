@@ -29,7 +29,7 @@ export function Scrollbar(props: ScrollbarProps) {
           {props.children}
         </div>
       </div>
-      <div css={classes.track} style={{ display: thumbStyles.display}}>
+      <div css={classes.track} style={{ display: thumbStyles.display }}>
         <div css={classes.thumb} style={thumbStyles} />
       </div>
     </div>

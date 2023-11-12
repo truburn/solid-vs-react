@@ -2,7 +2,9 @@ import { RecipeInfoProps, useRecipeInfoStyles } from "@/library/RecipeInfo";
 import { SectionHeader } from "@/library/SectionHeader";
 
 export function RecipeInfo(props: RecipeInfoProps) {
-  const { recipe: {cuisine, meal, author, created }} = props;
+  const {
+    recipe: { cuisine, meal, author, created },
+  } = props;
   const classes = useRecipeInfoStyles();
 
   return (
@@ -26,10 +28,12 @@ export function RecipeInfo(props: RecipeInfoProps) {
         <div css={classes.info}>
           <p css={classes.label}>Meal:</p>
           <ul css={classes.meal}>
-            {meal.map((m) => <li key={m}>{m}</li>)}
+            {meal.map((m) => (
+              <li key={m}>{m}</li>
+            ))}
           </ul>
         </div>
       )}
     </div>
-  )
+  );
 }

@@ -53,6 +53,7 @@ export function usePageStyles() {
     justifyContent: "flex-start",
     maxWidth: 350,
     margin: `${theme.spacing.large}px 0px`,
+    overflow: "hidden",
   });
 
   return { root, content, page, outlet, sidePanel };

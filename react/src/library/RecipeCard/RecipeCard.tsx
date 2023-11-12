@@ -23,18 +23,18 @@ export function RecipeCard(props: RecipeCardProps) {
       <Link css={classes.card} to={`/recipe/${recipe.recipeID}`}>
         <p css={classes.title}>{recipe.name}</p>
         {!compact && (
-        <div css={classes.meta}>
-          <p>{recipe.author}</p>
-          <p>{recipe.created?.toDateString()}</p>
-        </div>
+          <div css={classes.meta}>
+            <p>{recipe.author}</p>
+            <p>{recipe.created?.toDateString()}</p>
+          </div>
         )}
-            <p css={classes.summary}>{summary}</p>
-            <div css={classes.info}>
-              <p css={classes.cuisine}>{recipe.cuisine}</p>
-              <ul css={classes.meals}>
-                {recipe.meal?.map((m) => <li key={m}>{m}</li>)}
-              </ul>
-            </div>
+        <p css={classes.summary}>{summary}</p>
+        <div css={classes.info}>
+          <p css={classes.cuisine}>{recipe.cuisine}</p>
+          <ul css={classes.meals}>
+            {recipe.meal?.map((m) => <li key={m}>{m}</li>)}
+          </ul>
+        </div>
       </Link>
     </li>
   );
