@@ -31,6 +31,7 @@ interface Ingredient {
   unit?: MeasureUnit;
   url?: string;
   summary?: string;
+  cut?: string;
 }
 
 interface Revision {
