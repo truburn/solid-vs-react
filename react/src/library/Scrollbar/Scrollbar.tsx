@@ -18,6 +18,10 @@ export function Scrollbar(props: ScrollbarProps) {
     };
   }, []);
 
+  useEffect(() => {
+    moveThumb();
+  }, [props.children]);
+
   return (
     <div css={classes.root}>
       <div css={classes.contentWrapper}>

@@ -6,14 +6,16 @@ import { Scrollbar } from "@/library/Scrollbar";
 import { RecipeTools } from "@/library/RecipeTools";
 import { getDummyRecipes } from "@/dummyData";
 import { useMemo } from "react";
+import { RecipeCard } from "@/library/RecipeCard";
+import { useRecipeListStyles } from "@/routes/RecipeList";
 
 export function RecipeList() {
   useClearSides();
+  const classes = useRecipeListStyles();
   // const recipes = useLoaderData() as any[];
 
   const recipes = useMemo<Recipe[]>(() => {
-    const list = getDummyRecipes(20);
-    console.log('recipes: ', list);
+    const list = getDummyRecipes(50);
     return list as Recipe[];
   }, []);
 
@@ -22,9 +24,11 @@ export function RecipeList() {
       <PageHeader title="My Favorite Recipes" />
       <RecipeTools tools={["add"]} />
       <Scrollbar>
-        {recipes.map(({ recipeID, name }) => (
-          <p key={recipeID}>{name}</p>
+        <div css={classes.root}>
+        {recipes.map((recipe) => (
+          <RecipeCard key={recipe.recipeID} {...recipe} />
         ))}
+        </div>
       </Scrollbar>
     </>
   );

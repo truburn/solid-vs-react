@@ -43,6 +43,7 @@ export function useScrollbarStyles() {
     background: theme.colors.standard.altContrast,
     cursor: "pointer",
     height: "100%",
+    minHeight: 20,
     position: "absolute",
     top: 0,
     left: 0,
