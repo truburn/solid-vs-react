@@ -6,25 +6,28 @@ export function RecipeCard(props: RecipeCardProps) {
   const { recipe, compact } = props;
   const classes = useRecipeCardStyles(compact);
 
-  const summary = useMemo<string>(() => {
-    const wordArray = recipe.summary?.split(" ") ?? [];
-    const sumArray = wordArray.slice(0, 15);
-    if (wordArray.length > sumArray.length) {
-      sumArray.push("...");
+  const summary = useMemo<string | undefined>(() => {
+    const fullLength = recipe.summary?.length ?? 0;
+    const maxLength = compact ? 60 : 120;
+    let tmpSummary = recipe.summary?.substring(0, maxLength);
+
+    if (fullLength > maxLength) {
+      tmpSummary += "...";
     }
-    return sumArray.join(" ");
-  }, [recipe.summary]);
+
+    return tmpSummary;
+  }, [recipe.summary, compact]);
 
   return (
     <li css={classes.root}>
       <Link css={classes.card} to={`/recipe/${recipe.recipeID}`}>
         <p css={classes.title}>{recipe.name}</p>
+        {!compact && (
         <div css={classes.meta}>
           <p>{recipe.author}</p>
           <p>{recipe.created?.toDateString()}</p>
         </div>
-        {!compact && (
-          <>
+        )}
             <p css={classes.summary}>{summary}</p>
             <div css={classes.info}>
               <p css={classes.cuisine}>{recipe.cuisine}</p>
@@ -32,8 +35,6 @@ export function RecipeCard(props: RecipeCardProps) {
                 {recipe.meal?.map((m) => <li key={m}>{m}</li>)}
               </ul>
             </div>
-          </>
-        )}
       </Link>
     </li>
   );

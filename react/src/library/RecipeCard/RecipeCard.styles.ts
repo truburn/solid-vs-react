@@ -83,13 +83,13 @@ export function useRecipeCardStyles(isCompact?: boolean) {
   });
 
   const cuisine: SerializedStyles = css({
-    margin: 0,
+    margin: isCompact ? `${theme.spacing.thin}px 0` : 0,
     fontSize: "0.875rem",
   });
 
   const meals: SerializedStyles = css({
     display: "flex",
-    flexDirection: isCompact ? "column" : "row",
+    flexDirection: "row",
     flexWrap: "wrap",
     alignItems: "stretch",
     justifyContent: isCompact ? "flex-start" : "flex-end",
@@ -99,9 +99,7 @@ export function useRecipeCardStyles(isCompact?: boolean) {
     "& li": {
       display: "flex",
       alignItems: "center",
-      margin: isCompact
-        ? `${theme.spacing.thin}px 0`
-        : `0 ${theme.spacing.thin}px`,
+      margin: theme.spacing.thin,
       padding: "0 0.5rem",
       fontSize: "0.75rem",
       fontWeight: theme.fonts.default.weight?.light,

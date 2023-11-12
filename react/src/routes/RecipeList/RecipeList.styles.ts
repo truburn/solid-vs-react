@@ -5,6 +5,7 @@ export function useRecipeListStyles() {
     flex: 1,
     display: "flex",
     flexDirection: "row",
+    alignItems: "stretch",
     flexWrap: "wrap",
     justifyContent: "space-evenly",
     margin: 0,
