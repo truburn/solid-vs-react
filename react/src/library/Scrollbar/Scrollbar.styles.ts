@@ -3,7 +3,7 @@ import { css, SerializedStyles, useTheme } from "@emotion/react";
 export function useScrollbarStyles() {
   const theme = useTheme();
 
-  const root: SerializedStyles = css({
+  const root = css({
     flex: 1,
     overflow: "hidden",
     display: "flex",
@@ -12,7 +12,7 @@ export function useScrollbarStyles() {
     justifyContent: "space-between",
   });
 
-  const contentWrapper: SerializedStyles = css({
+  const contentWrapper = css({
     flex: 1,
     display: "flex",
     overflow: "hidden",
@@ -20,13 +20,13 @@ export function useScrollbarStyles() {
     width: "fit-content",
   });
 
-  const content: SerializedStyles = css({
+  const content = css({
     flex: 1,
     overflow: "auto",
     marginRight: -18,
   });
 
-  const track: SerializedStyles = css({
+  const track = css({
     border: "solid 1px",
     margin: 5,
     marginLeft: 0,
@@ -37,7 +37,7 @@ export function useScrollbarStyles() {
     position: "relative",
   });
 
-  const thumb: SerializedStyles = css({
+  const thumb = css({
     ...theme.scrollbar,
     background: theme.colors.standard.altContrast,
     cursor: "pointer",

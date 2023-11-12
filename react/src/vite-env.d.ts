@@ -56,6 +56,7 @@ interface Recipe {
   cuisine?: string;
   meal?: Meal[];
   ingredients?: Ingredient[];
+  steps?: RecipeStep[];
   revisions?: Revision[];
   author?: string;
   created?: Date;

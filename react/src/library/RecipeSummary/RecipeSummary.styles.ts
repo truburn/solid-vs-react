@@ -3,7 +3,7 @@ import { css, SerializedStyles, useTheme } from "@emotion/react";
 export function useRecipeSummaryStyles() {
   const theme = useTheme();
 
-  const root: SerializedStyles = css({
+  const root = css({
     flex: 1,
     display: "flex",
     flexDirection: "column",
@@ -11,7 +11,7 @@ export function useRecipeSummaryStyles() {
     overflow: "hidden",
   });
 
-  const body: SerializedStyles = css({
+  const body = css({
     margin: `${theme.spacing.medium}px ${theme.spacing.large}px`,
     fontSize: "0.875rem",
   });

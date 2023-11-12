@@ -1,7 +1,7 @@
 import { css, SerializedStyles } from "@emotion/react";
 
 export function useIconStyles() {
-  const root: SerializedStyles = css({
+  const root = css({
     color: "currentcolor",
   });
 

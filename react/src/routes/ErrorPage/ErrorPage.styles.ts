@@ -3,7 +3,7 @@ import { css, SerializedStyles, useTheme } from "@emotion/react";
 export function useErrorPageStyles() {
   const theme = useTheme();
 
-  const stackLine: SerializedStyles = css({
+  const stackLine = css({
     fontSize: "0.875rem",
     fontFamily: theme.fonts.default.name,
     fontWeight: theme.fonts.default.weight?.light,

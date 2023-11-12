@@ -1,7 +1,7 @@
 import { css, SerializedStyles } from "@emotion/react";
 
 export function useSideListStyles() {
-  const root: SerializedStyles = css({
+  const root = css({
     display: "flex",
     flexDirection: "column",
     alignItems: "stretch",

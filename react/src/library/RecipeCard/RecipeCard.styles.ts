@@ -3,12 +3,12 @@ import { css, SerializedStyles, useTheme } from "@emotion/react";
 export function useRecipeCardStyles(isCompact?: boolean) {
   const theme = useTheme();
 
-  const root: SerializedStyles = css({
+  const root = css({
     margin: 0,
     padding: 0,
   });
 
-  const card: SerializedStyles = css({
+  const card = css({
     display: "flex",
     flexDirection: "column",
     width: isCompact ? "auto" : 375,
@@ -29,7 +29,7 @@ export function useRecipeCardStyles(isCompact?: boolean) {
     },
   });
 
-  const meta: SerializedStyles = css({
+  const meta = css({
     display: "flex",
     flexDirection: isCompact ? "column" : "row",
     alignItems: "flex-start",
@@ -42,7 +42,7 @@ export function useRecipeCardStyles(isCompact?: boolean) {
     },
   });
 
-  const title: SerializedStyles = css({
+  const title = css({
     margin: 0,
     background: isCompact
       ? theme.colors.secondary.altContrast
@@ -67,14 +67,14 @@ export function useRecipeCardStyles(isCompact?: boolean) {
     },
   });
 
-  const summary: SerializedStyles = css({
+  const summary = css({
     flex: 1,
     margin: 0,
     padding: `${theme.spacing.medium}px ${theme.spacing.large}px`,
     fontSize: "0.875rem",
   });
 
-  const info: SerializedStyles = css({
+  const info = css({
     display: "flex",
     flexDirection: isCompact ? "column" : "row",
     alignItems: isCompact ? "stretch" : "center",
@@ -82,12 +82,12 @@ export function useRecipeCardStyles(isCompact?: boolean) {
     padding: theme.spacing.medium,
   });
 
-  const cuisine: SerializedStyles = css({
+  const cuisine = css({
     margin: isCompact ? `${theme.spacing.thin}px 0` : 0,
     fontSize: "0.875rem",
   });
 
-  const meals: SerializedStyles = css({
+  const meals = css({
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",

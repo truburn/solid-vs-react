@@ -1,7 +1,7 @@
 import { css, SerializedStyles } from "@emotion/react";
 
 export function useInfoPanelStyles() {
-  const root: SerializedStyles = css({
+  const root = css({
     flex: 1,
     overflow: "hidden",
     display: "flex",

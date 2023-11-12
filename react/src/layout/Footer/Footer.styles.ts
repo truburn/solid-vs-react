@@ -3,7 +3,7 @@ import { css, useTheme, SerializedStyles } from "@emotion/react";
 export function useFooterStyles() {
   const theme = useTheme();
 
-  const root: SerializedStyles = css({
+  const root = css({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",

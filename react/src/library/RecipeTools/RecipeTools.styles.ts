@@ -3,7 +3,7 @@ import { css, SerializedStyles, useTheme } from "@emotion/react";
 export function useRecipeToolsStyles() {
   const theme = useTheme();
 
-  const root: SerializedStyles = css({
+  const root = css({
     position: "absolute",
     top: 0,
     right: 0,
@@ -14,7 +14,7 @@ export function useRecipeToolsStyles() {
     padding: theme.spacing.small,
   });
 
-  const link: SerializedStyles = css({
+  const link = css({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
@@ -37,7 +37,7 @@ export function useRecipeToolsStyles() {
     },
   });
 
-  const linkIcon: SerializedStyles = css({
+  const linkIcon = css({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -52,7 +52,7 @@ export function useRecipeToolsStyles() {
     borderColor: theme.colors.secondary.main,
   });
 
-  const linkLabel: SerializedStyles = css({
+  const linkLabel = css({
     fontSize: "0.875rem",
     whiteSpace: "nowrap",
     padding: "0 1rem 0 0.5rem",

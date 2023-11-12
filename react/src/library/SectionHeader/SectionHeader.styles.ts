@@ -3,7 +3,7 @@ import { css, SerializedStyles, useTheme } from "@emotion/react";
 export function useSectionHeaderStyles() {
   const theme = useTheme();
 
-  const root: SerializedStyles = css({
+  const root = css({
     margin: theme.spacing.medium,
     padding: theme.spacing.medium,
     fontFamily: theme.fonts.heading.name,

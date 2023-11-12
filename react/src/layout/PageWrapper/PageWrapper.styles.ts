@@ -3,7 +3,7 @@ import { css, SerializedStyles, useTheme } from "@emotion/react";
 export function usePageStyles() {
   const theme = useTheme();
 
-  const root: SerializedStyles = css({
+  const root = css({
     flex: 1,
     display: "flex",
     flexDirection: "row",
@@ -12,7 +12,7 @@ export function usePageStyles() {
     overflow: "hidden",
   });
 
-  const content: SerializedStyles = css({
+  const content = css({
     display: "flex",
     flexDirection: "column",
     alignItems: "stretch",
@@ -20,7 +20,7 @@ export function usePageStyles() {
     overflow: "hidden",
   });
 
-  const page: SerializedStyles = css({
+  const page = css({
     flex: 1,
     display: "flex",
     flexDirection: "row",
@@ -29,7 +29,7 @@ export function usePageStyles() {
     overflow: "hidden",
   });
 
-  const outlet: SerializedStyles = css({
+  const outlet = css({
     display: "flex",
     flexDirection: "column",
     alignItems: "stretch",
@@ -46,7 +46,7 @@ export function usePageStyles() {
     position: "relative",
   });
 
-  const sidePanel: SerializedStyles = css({
+  const sidePanel = css({
     display: "flex",
     flexDirection: "column",
     alignItems: "stretch",

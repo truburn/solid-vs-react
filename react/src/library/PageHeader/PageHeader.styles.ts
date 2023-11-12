@@ -3,7 +3,7 @@ import { css, SerializedStyles, useTheme } from "@emotion/react";
 export function usePageHeaderStyles() {
   const theme = useTheme();
 
-  const root: SerializedStyles = css({
+  const root = css({
     maxWidth: "65%",
     margin: "1rem auto",
     padding: "0.75rem 2.25rem",

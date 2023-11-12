@@ -3,7 +3,7 @@ import { css, SerializedStyles, useTheme } from "@emotion/react";
 export function usePageNotFoundStyles() {
   const theme = useTheme();
 
-  const root: SerializedStyles = css({
+  const root = css({
     flex: 1,
     display: "flex",
     flexDirection: "column",
@@ -15,13 +15,13 @@ export function usePageNotFoundStyles() {
     textAlign: "center",
   });
 
-  const icon: SerializedStyles = css({
+  const icon = css({
     color: theme.colors.primary.main,
     fontSize: "20rem",
     margin: theme.spacing.wide,
   });
 
-  const redirect: SerializedStyles = css({
+  const redirect = css({
     fontSize: "1.25rem",
     color: theme.colors.standard.main,
     "& a": {
