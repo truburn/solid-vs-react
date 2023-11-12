@@ -43,7 +43,7 @@ export function GlobalStyles() {
             marginBottom: theme.spacing.large,
           },
           a: {
-            fontFamily: 'inherit',
+            fontFamily: "inherit",
             fontWeight: theme.fonts.default.weight?.bold,
             color: theme.colors.secondary.altMain,
             "&:hover": {

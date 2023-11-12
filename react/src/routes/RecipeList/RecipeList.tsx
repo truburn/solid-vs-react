@@ -24,11 +24,11 @@ export function RecipeList() {
       <PageHeader title="My Favorite Recipes" />
       <RecipeTools tools={["add"]} />
       <Scrollbar>
-        <div css={classes.root}>
-        {recipes.map((recipe) => (
-          <RecipeCard key={recipe.recipeID} {...recipe} />
-        ))}
-        </div>
+        <ul css={classes.root}>
+          {recipes.map((recipe) => (
+            <RecipeCard key={recipe.recipeID} recipe={recipe} />
+          ))}
+        </ul>
       </Scrollbar>
     </>
   );

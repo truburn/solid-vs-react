@@ -1,12 +1,17 @@
 import { css, SerializedStyles, useTheme } from "@emotion/react";
 
-export function useRecipeCardStyles() {
+export function useRecipeCardStyles(isCompact?: boolean) {
   const theme = useTheme();
 
   const root: SerializedStyles = css({
+    margin: 0,
+    padding: 0,
+  });
+
+  const card: SerializedStyles = css({
     display: "flex",
     flexDirection: "column",
-    width: 375,
+    width: isCompact ? "auto" : 375,
     borderStyle: "solid",
     borderColor: theme.colors.secondary.main,
     borderWidth: theme.border.width,
@@ -20,12 +25,13 @@ export function useRecipeCardStyles() {
     "&:hover": {
       borderColor: theme.colors.primary.main,
       color: theme.colors.primary.main,
+      background: theme.colors.primary.contrast,
     },
   });
 
   const meta: SerializedStyles = css({
     display: "flex",
-    flexDirection: "row",
+    flexDirection: isCompact ? "column" : "row",
     alignItems: "flex-start",
     justifyContent: "space-between",
     "& p": {
@@ -38,17 +44,26 @@ export function useRecipeCardStyles() {
 
   const title: SerializedStyles = css({
     margin: 0,
-    background: theme.colors.secondary.main,
-    color: theme.colors.secondary.contrast,
+    background: isCompact
+      ? theme.colors.secondary.altContrast
+      : theme.colors.secondary.main,
+    color: isCompact
+      ? theme.colors.secondary.altMain
+      : theme.colors.secondary.contrast,
     fontFamily: theme.fonts.default.name,
     fontWeight: theme.fonts.default.weight?.bold,
-    fontSize: "1.125rem",
-    whiteSpace: "nowrap",
+    fontSize: isCompact ? "0.875rem" : "1.125rem",
+    whiteSpace: isCompact ? "normal" : "nowrap",
     overflow: "clip",
     textOverflow: "ellipsis",
     padding: theme.spacing.medium,
     "a:hover &": {
-      background: theme.colors.primary.main,
+      background: isCompact
+        ? theme.colors.primary.altContrast
+        : theme.colors.primary.main,
+      color: isCompact
+        ? theme.colors.primary.altMain
+        : theme.colors.primary.contrast,
     },
   });
 
@@ -61,8 +76,8 @@ export function useRecipeCardStyles() {
 
   const info: SerializedStyles = css({
     display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: isCompact ? "column" : "row",
+    alignItems: isCompact ? "stretch" : "center",
     justifyContent: "space-between",
     padding: theme.spacing.medium,
   });
@@ -74,16 +89,19 @@ export function useRecipeCardStyles() {
 
   const meals: SerializedStyles = css({
     display: "flex",
-    flexDirection: "row",
+    flexDirection: isCompact ? "column" : "row",
+    flexWrap: "wrap",
     alignItems: "stretch",
-    justifyContent: "flex-end",
+    justifyContent: isCompact ? "flex-start" : "flex-end",
     margin: 0,
     padding: 0,
     listStyle: "none",
     "& li": {
       display: "flex",
       alignItems: "center",
-      margin: `0 ${theme.spacing.thin}px`,
+      margin: isCompact
+        ? `${theme.spacing.thin}px 0`
+        : `0 ${theme.spacing.thin}px`,
       padding: "0 0.5rem",
       fontSize: "0.75rem",
       fontWeight: theme.fonts.default.weight?.light,
@@ -99,5 +117,5 @@ export function useRecipeCardStyles() {
     },
   });
 
-  return { root, meta, title, summary, info, cuisine, meals };
+  return { root, card, meta, title, summary, info, cuisine, meals };
 }

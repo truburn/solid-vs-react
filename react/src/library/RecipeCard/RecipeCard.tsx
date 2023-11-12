@@ -1,33 +1,40 @@
-import { useRecipeCardStyles } from "@/library/RecipeCard";
+import { useRecipeCardStyles, RecipeCardProps } from "@/library/RecipeCard";
 import { Link } from "react-router-dom";
 import { useMemo } from "react";
 
-export function RecipeCard(props: Recipe) {
-  const classes = useRecipeCardStyles();
+export function RecipeCard(props: RecipeCardProps) {
+  const { recipe, compact } = props;
+  const classes = useRecipeCardStyles(compact);
 
   const summary = useMemo<string>(() => {
-    const wordArray = props.summary?.split(" ") ?? [];
+    const wordArray = recipe.summary?.split(" ") ?? [];
     const sumArray = wordArray.slice(0, 15);
     if (wordArray.length > sumArray.length) {
       sumArray.push("...");
     }
     return sumArray.join(" ");
-  }, [props.summary]);
+  }, [recipe.summary]);
 
   return (
-    <Link css={classes.root} to={`/recipe/${props.recipeID}`}>
-      <p css={classes.title}>{props.name}</p>
-      <div css={classes.meta}>
-        <p>{props.author}</p>
-        <p>{props.created?.toDateString()}</p>
-      </div>
-      <p css={classes.summary}>{summary}</p>
-      <div css={classes.info}>
-        <p css={classes.cuisine}>{props.cuisine}</p>
-        <ul css={classes.meals}>
-          {props.meal?.map((m) => <li key={m}>{m}</li>)}
-        </ul>
-      </div>
-    </Link>
-  )
+    <li css={classes.root}>
+      <Link css={classes.card} to={`/recipe/${recipe.recipeID}`}>
+        <p css={classes.title}>{recipe.name}</p>
+        <div css={classes.meta}>
+          <p>{recipe.author}</p>
+          <p>{recipe.created?.toDateString()}</p>
+        </div>
+        {!compact && (
+          <>
+            <p css={classes.summary}>{summary}</p>
+            <div css={classes.info}>
+              <p css={classes.cuisine}>{recipe.cuisine}</p>
+              <ul css={classes.meals}>
+                {recipe.meal?.map((m) => <li key={m}>{m}</li>)}
+              </ul>
+            </div>
+          </>
+        )}
+      </Link>
+    </li>
+  );
 }

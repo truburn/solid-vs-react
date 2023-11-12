@@ -1,17 +1,15 @@
-import { css, SerializedStyles, useTheme } from "@emotion/react";
+import { css, SerializedStyles } from "@emotion/react";
 
 export function useSideListStyles() {
-  const theme = useTheme();
-
   const root: SerializedStyles = css({
     display: "flex",
     flexDirection: "column",
-    border: "dotted 1px",
+    alignItems: "stretch",
+    margin: 0,
+    padding: 0,
+    listStyle: "none",
+    width: 225,
   });
 
-  const logo: SerializedStyles = css({
-    padding: `${theme.spacing.large}px ${theme.spacing.wide}px`,
-  });
-
-  return { root, logo };
+  return { root };
 }

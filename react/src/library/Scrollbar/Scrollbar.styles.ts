@@ -14,17 +14,16 @@ export function useScrollbarStyles() {
 
   const contentWrapper: SerializedStyles = css({
     flex: 1,
+    display: "flex",
     overflow: "hidden",
     position: "relative",
+    width: "fit-content",
   });
 
   const content: SerializedStyles = css({
+    flex: 1,
     overflow: "auto",
-    position: "absolute",
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: -18,
+    marginRight: -18,
   });
 
   const track: SerializedStyles = css({
