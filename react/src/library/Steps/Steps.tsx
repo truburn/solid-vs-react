@@ -19,5 +19,5 @@ export function Steps(props: StepsProps) {
         </Scrollbar>
       </div>
     </div>
-  )
+  );
 }

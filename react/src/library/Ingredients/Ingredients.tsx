@@ -1,6 +1,6 @@
 import { IngredientsProps, useIngredientsStyles } from "@/library/Ingredients";
 import { SectionHeader } from "@/library/SectionHeader";
-import { Scrollbar } from "@/library/Scrollbar"
+import { Scrollbar } from "@/library/Scrollbar";
 
 export function Ingredients(props: IngredientsProps) {
   const { ingredients = [] } = props;
@@ -19,5 +19,5 @@ export function Ingredients(props: IngredientsProps) {
         </Scrollbar>
       </div>
     </div>
-  )
+  );
 }
