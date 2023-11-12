@@ -2,12 +2,20 @@
 import { useClearSides } from "@/utils/common.hooks";
 import { PageHeader } from "@/library/PageHeader";
 import { Scrollbar } from "@/library/Scrollbar";
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 import { RecipeTools } from "@/library/RecipeTools";
+import { getDummyRecipes } from "@/dummyData";
+import { useMemo } from "react";
 
 export function RecipeList() {
   useClearSides();
-  const recipes = useLoaderData() as any[];
+  // const recipes = useLoaderData() as any[];
+
+  const recipes = useMemo<Recipe[]>(() => {
+    const list = getDummyRecipes(20);
+    console.log('recipes: ', list);
+    return list as Recipe[];
+  }, []);
 
   return (
     <>

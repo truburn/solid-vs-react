@@ -11,7 +11,7 @@ export function RecipePage() {
 
   useEffect(() => {
     setShowList(true);
-    setSidePanelContent(true)
+    setSidePanelContent(true);
   }, []);
 
   return (

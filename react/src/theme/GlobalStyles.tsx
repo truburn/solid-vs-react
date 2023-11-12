@@ -40,7 +40,7 @@ export function GlobalStyles() {
           p: {
             fontFamily: theme.fonts.body.name,
             margin: 0,
-            marginBottom: theme.spacing.wide,
+            marginBottom: theme.spacing.large,
           },
           a: {
             fontFamily: theme.fonts.default.name,
