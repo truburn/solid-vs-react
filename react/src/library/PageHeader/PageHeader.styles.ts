@@ -15,6 +15,7 @@ export function usePageHeaderStyles() {
     transform: "rotate(-2deg)",
     borderStyle: "solid",
     borderWidth: 3,
+    textAlign: "center",
     ...theme.border.drawn,
   });
 
