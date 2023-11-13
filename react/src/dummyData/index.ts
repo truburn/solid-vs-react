@@ -16,7 +16,7 @@ export function getDummyIngredients(count = 3): Ingredient[] {
     "tsp",
     "tbl",
     "c",
-    "p",
+    "pt",
     "qt",
     "gal",
     "oz",
