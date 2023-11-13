@@ -11,7 +11,7 @@ export function Steps(props: StepsProps) {
       <SectionHeader title="How to make it" />
       <div css={classes.content}>
         <Scrollbar>
-          <ol>
+          <ol css={classes.list}>
             {steps.map(({ body }, idx) => (
               <li key={`step-${idx + 1}`}>{body}</li>
             ))}
