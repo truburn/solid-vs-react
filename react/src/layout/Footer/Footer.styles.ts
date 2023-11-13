@@ -1,4 +1,4 @@
-import { css, useTheme, SerializedStyles } from "@emotion/react";
+import { css, useTheme } from "@emotion/react";
 
 export function useFooterStyles() {
   const theme = useTheme();

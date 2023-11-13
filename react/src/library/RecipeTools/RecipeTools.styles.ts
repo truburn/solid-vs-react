@@ -1,4 +1,4 @@
-import { css, SerializedStyles, useTheme } from "@emotion/react";
+import { css, useTheme } from "@emotion/react";
 
 export function useRecipeToolsStyles() {
   const theme = useTheme();
