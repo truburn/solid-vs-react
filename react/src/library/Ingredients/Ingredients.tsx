@@ -19,7 +19,7 @@ export function Ingredients(props: IngredientsProps) {
           <ul css={classes.list}>
             {ingredients.map((ing) => (
               <li key={ing.ingredientID} title={ing.summary}>
-                  {`${ing.qty} ${ing.unit} ${ing.name}`}
+                {`${ing.qty} ${ing.unit} ${ing.name}`}
               </li>
             ))}
           </ul>
