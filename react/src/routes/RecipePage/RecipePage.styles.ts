@@ -17,7 +17,8 @@ export function useRecipePageStyles() {
     borderColor: theme.colors.primary.altContrast,
     borderWidth: 0,
     borderRightWidth: theme.border.width,
-    margin: theme.spacing.thin,
+    margin: theme.spacing.small,
+    marginTop: theme.spacing.large,
   });
 
   return { content, divider };

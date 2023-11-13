@@ -5,7 +5,7 @@ type MeasureUnit =
   | "tsp"
   | "tbl"
   | "c"
-  | "p"
+  | "pt"
   | "qt"
   | "gal"
   | "oz"
