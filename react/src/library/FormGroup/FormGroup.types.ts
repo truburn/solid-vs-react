@@ -1,13 +1,9 @@
-import { JSXElementConstructor } from "react";
+import { ReactNode } from "react";
 
-export interface FormFieldProps {
+export interface FormGroupProps {
+  input: ReactNode;
   fieldName: keyof Recipe;
-  value?: any;
-}
-
-export interface FormGroupProps extends FormFieldProps {
-  onChange: (field: keyof Recipe, newValue: any) => void;
-  initialValue?: any;
-  InputComponent?: JSXElementConstructor<Partial<FormGroupProps>>;
-  DisplayComponent?: JSXElementConstructor<Omit<FormFieldProps, "fieldName">>;
+  legend?: string;
+  valueDisplay?: ReactNode;
+  fieldState?: "idle" | "changed" | "error";
 }
