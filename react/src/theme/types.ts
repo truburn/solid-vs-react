@@ -1,4 +1,4 @@
-interface ThemeColor {
+export interface ThemeColor {
   main: string;
   contrast: string;
   altMain: string;
@@ -15,6 +15,8 @@ interface ThemeFont {
     bold?: number;
   };
 }
+
+export type ThemeColorKey = keyof MCTheme["colors"];
 
 export interface MCTheme {
   baseSize: number;
