@@ -51,6 +51,8 @@ export function useFormGroupStyles(status?: string) {
     fontSize: "1.25rem",
   });
 
+  const info = css({});
+
   const label = css({
     color: colorGroup.altMain,
     fontSize: "0.875rem",
@@ -64,5 +66,5 @@ export function useFormGroupStyles(status?: string) {
     padding: theme.spacing.small,
   });
 
-  return { root, legend, label, input };
+  return { root, legend, info, label, input };
 }

@@ -10,12 +10,14 @@ export function FormGroup(props: FormGroupProps) {
     fieldState = "idle",
     valueDisplay,
     input,
+    info,
   } = props;
   const classes = useFormGroupStyles(fieldState);
 
   return (
     <fieldset css={classes.root} name={fieldName} id={uniqueId(`form-group-${fieldName}-`)}>
       <legend css={classes.legend}>{capitalize(legend ?? fieldName)}</legend>
+      {info && <p css={classes.info}>{info}</p>}
       {valueDisplay && (
         <div>
           <p css={classes.label}>Current Value</p>

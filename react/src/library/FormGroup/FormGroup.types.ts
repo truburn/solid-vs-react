@@ -6,4 +6,6 @@ export interface FormGroupProps {
   legend?: string;
   valueDisplay?: ReactNode;
   fieldState?: "idle" | "changed" | "error";
+  info?: string;
+  error?: string;
 }
