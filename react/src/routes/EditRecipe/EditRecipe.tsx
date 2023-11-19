@@ -2,36 +2,142 @@ import { EditRecipeProps, useEditRecipeStyles } from "@/routes/EditRecipe";
 import { PageHeader } from "@/library/PageHeader";
 import { useClearSides } from "@/utils/common.hooks";
 import { Scrollbar } from "@/library/Scrollbar";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { getDummyRecipes } from "@/dummyData";
 import { useParams } from "react-router-dom";
 import { Button } from "@/library/Button";
+import { FormGroup } from "@/library/FormGroup";
+import { FormInput } from "@/library/FormInput";
+import { MealInput } from "@/library/MealInput";
+import { ServingsInput } from "@/library/ServingsInput";
+import { IngredientsInput } from "@/library/IngredientsInput";
+import { StepsInput } from "@/library/StepsInput";
+import { Ingredients } from "@/library/Ingredients";
+import { Steps } from "@/library/Steps";
+
+const DEFAULT_RECIPE: Recipe = {
+  name: "My Awesome Recipe",
+  author: "Anonymous",
+};
 
 export function EditRecipe(props: EditRecipeProps) {
   const { isNew } = props;
+  const [recipe, setRecipe] = useState<Recipe>(DEFAULT_RECIPE);
   const { id } = useParams();
   useClearSides();
   const classes = useEditRecipeStyles();
 
-  const recipe = useMemo<Recipe | undefined>(() => {
-    if (!id) return undefined;
+  const prevRecipe = useMemo<Recipe | null>(() => {
+    if (id) {
+      const dummyRecipe = getDummyRecipes() as Recipe;
+      setRecipe(dummyRecipe);
+      return dummyRecipe;
+    }
 
-    const tmpRecipe = getDummyRecipes();
-    console.log(tmpRecipe);
-    return tmpRecipe as Recipe;
+    return null;
   }, [id]);
 
-  const pageTitle = useMemo<string>(() => {
-    if (isNew ?? !id ?? !recipe) return "New Recipe";
-
-    return "Edit Recipe";
-  }, [isNew, id, recipe]);
+  const setFieldValue = (fieldName: string, newValue: any) => {
+    const tmpRecipe = {
+      ...recipe,
+      [fieldName]: newValue,
+    };
+    setRecipe(tmpRecipe);
+  };
 
   return (
     <>
-      <PageHeader title={pageTitle} />
+      <PageHeader title={isNew ?? !id ? "New Recipe" : "Edit Recipe"} />
       <Scrollbar>
-        <p>Add/Edit Form</p>
+        <FormGroup
+          legend="Name"
+          input={
+            <FormInput
+              name="name"
+              value={recipe.name}
+              updateField={setFieldValue}
+            />
+          }
+          valueDisplay={prevRecipe && <p>{prevRecipe?.name}</p>}
+        />
+        <FormGroup
+          legend="Author"
+          input={
+            <FormInput
+              name="author"
+              value={recipe.author}
+              updateField={setFieldValue}
+            />
+          }
+          valueDisplay={prevRecipe && <p>{prevRecipe?.author}</p>}
+        />
+        <FormGroup
+          legend="Cuisine"
+          info="Recipe origin or style"
+          input={
+            <FormInput
+              name="cuisine"
+              value={recipe.cuisine}
+              updateField={setFieldValue}
+            />
+          }
+          valueDisplay={prevRecipe && <p>{prevRecipe?.cuisine}</p>}
+        />
+        <FormGroup
+          legend="Meal"
+          info="Suggested meals to serve this dish"
+          input={<MealInput value={recipe.meal} updateField={setFieldValue} />}
+          valueDisplay={prevRecipe && <p>{prevRecipe?.meal?.join(", ")}</p>}
+        />
+        <FormGroup
+          legend="Servings"
+          info="Number of servings and individual serving size"
+          input={
+            <ServingsInput
+              updateField={setFieldValue}
+              servingSizeValue={recipe.servingSize}
+              servingsValue={recipe.servings}
+            />
+          }
+        />
+        <FormGroup
+          legend="Summary"
+          info="Brief description of the recipe"
+          input={
+            <FormInput
+              name="summary"
+              value={recipe.summary}
+              updateField={setFieldValue}
+              multiline
+            />
+          }
+          valueDisplay={prevRecipe && <p>{prevRecipe?.summary}</p>}
+        />
+        <FormGroup
+          legend="Ingredients"
+          info="List of ingredients and quantities"
+          input={
+            <IngredientsInput
+              updateField={setFieldValue}
+              value={recipe.ingredients}
+            />
+          }
+          valueDisplay={
+            prevRecipe && (
+              <Ingredients noTitle ingredients={prevRecipe?.ingredients} />
+            )
+          }
+        />
+        <FormGroup
+          legend="Steps"
+          info="The steps to complete the recipe and supporting information"
+          input={
+            <StepsInput updateField={setFieldValue} value={recipe.steps} />
+          }
+          valueDisplay={
+            prevRecipe && <Steps noTitle steps={prevRecipe?.steps} />
+          }
+        />
       </Scrollbar>
       <div css={classes.actions}>
         <div>

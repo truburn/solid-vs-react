@@ -1,6 +1,6 @@
 import { css, useTheme } from "@emotion/react";
 
-export function useIngredientsStyles() {
+export function useIngredientsStyles(noTitle?: boolean) {
   const theme = useTheme();
 
   const root = css({
@@ -18,7 +18,7 @@ export function useIngredientsStyles() {
 
   const list = css({
     flex: 1,
-    margin: theme.spacing.medium,
+    margin: noTitle ? 0 : theme.spacing.medium,
     paddingLeft: 0,
     listStyle: "none",
     "& li": {

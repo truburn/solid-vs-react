@@ -1,7 +1,7 @@
 import { theme } from "@/theme";
 import { css } from "@emotion/react";
 
-export function useStepsStyles() {
+export function useStepsStyles(noTitle?: boolean) {
   const root = css({
     flex: 1,
     overflow: "hidden",
@@ -17,7 +17,7 @@ export function useStepsStyles() {
   });
 
   const list = css({
-    margin: theme.spacing.medium,
+    margin: noTitle ? 0 : theme.spacing.medium,
     paddingLeft: theme.spacing.large,
     counterReset: "stepCounter",
     listStyle: "none",

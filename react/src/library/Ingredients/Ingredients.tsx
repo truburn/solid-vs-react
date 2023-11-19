@@ -4,8 +4,8 @@ import { Scrollbar } from "@/library/Scrollbar";
 import { useEffect } from "react";
 
 export function Ingredients(props: IngredientsProps) {
-  const { ingredients = [] } = props;
-  const classes = useIngredientsStyles();
+  const { ingredients = [], noTitle } = props;
+  const classes = useIngredientsStyles(noTitle);
 
   useEffect(() => {
     console.log(ingredients);
@@ -13,7 +13,7 @@ export function Ingredients(props: IngredientsProps) {
 
   return (
     <div css={classes.root}>
-      <SectionHeader title="What you need" />
+      {!noTitle && <SectionHeader title="What you need" />}
       <div css={classes.content}>
         <Scrollbar>
           <ul css={classes.list}>
