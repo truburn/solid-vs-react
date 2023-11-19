@@ -2,21 +2,19 @@
 import { FormGroupProps, useFormGroupStyles } from "@/library/FormGroup";
 import capitalize from "lodash/capitalize";
 import uniqueId from "lodash/uniqueId";
+import kebabCase from "lodash/kebabCase";
 
 export function FormGroup(props: FormGroupProps) {
-  const {
-    fieldName,
-    legend,
-    fieldState = "idle",
-    valueDisplay,
-    input,
-    info,
-  } = props;
+  const { legend, fieldState = "idle", valueDisplay, input, info } = props;
   const classes = useFormGroupStyles(fieldState);
 
   return (
-    <fieldset css={classes.root} name={fieldName} id={uniqueId(`form-group-${fieldName}-`)}>
-      <legend css={classes.legend}>{capitalize(legend ?? fieldName)}</legend>
+    <fieldset
+      css={classes.root}
+      name={kebabCase(legend)}
+      id={uniqueId(`form-group-${kebabCase(legend)}-`)}
+    >
+      <legend css={classes.legend}>{capitalize(legend)}</legend>
       {info && <p css={classes.info}>{info}</p>}
       {valueDisplay && (
         <div>
