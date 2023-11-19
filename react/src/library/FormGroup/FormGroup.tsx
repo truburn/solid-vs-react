@@ -16,15 +16,17 @@ export function FormGroup(props: FormGroupProps) {
     >
       <legend css={classes.legend}>{capitalize(legend)}</legend>
       {info && <p css={classes.info}>{info}</p>}
-      {valueDisplay && (
+      <div css={classes.values}>
+        {valueDisplay && (
+          <div>
+            <p css={classes.label}>Current Value</p>
+            {valueDisplay}
+          </div>
+        )}
         <div>
-          <p css={classes.label}>Current Value</p>
-          {valueDisplay}
+          {valueDisplay && <label css={classes.label}>New Value</label>}
+          {input}
         </div>
-      )}
-      <div>
-        {valueDisplay && <label css={classes.label}>New Value</label>}
-        {input}
       </div>
     </fieldset>
   );

@@ -2,7 +2,7 @@ import { FormInputProps, useFormInputStyles } from "@/library/FormInput";
 
 export function FormInput(_props: FormInputProps) {
   const { updateField, multiline, ...props } = _props;
-  const classes = useFormInputStyles();
+  const classes = useFormInputStyles(multiline);
 
   const handleOnChange = (evt: any) => {
     const {

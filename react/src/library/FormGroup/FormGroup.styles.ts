@@ -27,22 +27,10 @@ export function useFormGroupStyles(status?: string) {
   }, [status, theme]);
 
   const root = css({
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "stretch",
-    justifyContent: "space-between",
     margin: theme.spacing.large,
-    background: colorGroup.contrast,
     borderColor: colorOpacity(colorGroup.main, status === "idle" ? 0.25 : 1),
     borderStyle: "solid",
     ...theme.border.drawn,
-    "& > div": {
-      flex: 1,
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "stretch",
-      margin: theme.spacing.medium,
-    },
   });
 
   const legend = css({
@@ -51,12 +39,41 @@ export function useFormGroupStyles(status?: string) {
     fontSize: "1.25rem",
   });
 
-  const info = css({});
+  const info = css({
+    textAlign: "right",
+    marginRight: theme.spacing.medium,
+    marginTop: -theme.spacing.large * 1.5,
+    fontSize: "0.875rem",
+    color: theme.colors.info.main,
+  });
+
+  const values = css({
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "stretch",
+    justifyContent: "space-between",
+    overflow: "hidden",
+    "& > div": {
+      flex: 1,
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "stretch",
+      margin: `0 ${theme.spacing.medium}px`,
+      overflow: "hidden",
+      maxHeight: 200,
+    },
+  });
 
   const label = css({
     color: colorGroup.altMain,
     fontSize: "0.875rem",
     fontFamily: theme.fonts.body.name,
+    margin: 0,
+    borderStyle: "solid",
+    borderWidth: 0,
+    borderBottomWidth: 1,
+    marginBottom: theme.spacing.small,
+    padding: `0 ${theme.spacing.small}px`,
   });
 
   const input = css({
@@ -66,5 +83,5 @@ export function useFormGroupStyles(status?: string) {
     padding: theme.spacing.small,
   });
 
-  return { root, legend, info, label, input };
+  return { root, legend, info, values, label, input };
 }

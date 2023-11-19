@@ -111,7 +111,13 @@ export function EditRecipe(props: EditRecipeProps) {
               multiline
             />
           }
-          valueDisplay={prevRecipe && <p>{prevRecipe?.summary}</p>}
+          valueDisplay={
+            prevRecipe && (
+              <Scrollbar>
+                <p>{prevRecipe?.summary}</p>
+              </Scrollbar>
+            )
+          }
         />
         <FormGroup
           legend="Ingredients"
