@@ -1,5 +1,8 @@
-export interface EditRecipeProps {
-  isNew?: boolean;
-}
+export interface EditRecipeProps {}
 
-export type UpdateField = (field: string, newValue: any) => void;
+export type UpdateField = (newValue: Partial<Recipe>) => void;
+
+export const INTIAL_RECIPE = {
+  name: "My Awesome Recipe",
+  author: "Anonymous",
+};

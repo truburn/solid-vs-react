@@ -24,8 +24,10 @@ type Meal =
   | "appetizer"
   | "dessert";
 
+type EntryID = string;
+
 interface Ingredient {
-  ingredientID?: string;
+  ingredientID?: EntryID;
   name: string;
   qty?: number;
   unit?: MeasureUnit;
@@ -35,7 +37,7 @@ interface Ingredient {
 }
 
 interface Revision {
-  revisionID: string;
+  revisionID: EntryID;
   date: Date;
   recipe: Recipe;
 }
@@ -50,7 +52,7 @@ interface RecipeStep {
 }
 
 interface Recipe {
-  recipeID?: string;
+  recipeID?: EntryID;
   name: string;
   summary?: string;
   cuisine?: string;

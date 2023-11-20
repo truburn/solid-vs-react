@@ -4,6 +4,14 @@ import { colorOpacity } from "@/utils";
 export function useEditRecipeStyles() {
   const theme = useTheme();
 
+  const root = css({
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "stretch",
+    overflow: "hidden",
+  });
+
   const actions = css({
     display: "flex",
     flexDirection: "row",
@@ -16,5 +24,5 @@ export function useEditRecipeStyles() {
     },
   });
 
-  return { actions };
+  return { root, actions };
 }
