@@ -32,7 +32,13 @@ export const router = createBrowserRouter([
           },
           {
             path: "new",
-            element: <EditRecipe isNew />,
+            element: <EditRecipe />,
+            action: async ({ params, request }) => {
+              const formData = await request.formData();
+              const body = Object.fromEntries(formData.entries());
+              console.log({ params, body });
+              return null;
+            },
           },
           {
             path: "edit",
@@ -42,13 +48,19 @@ export const router = createBrowserRouter([
                 loader: () => redirect("/recipe/new"),
               },
               {
-                path: ":id",
+                path: ":recipeID",
                 element: <EditRecipe />,
+                action: async ({ params, request }) => {
+                  const formData = await request.formData();
+                  const body = Object.fromEntries(formData.entries());
+                  console.log({ params, body });
+                  return null;
+                },
               },
             ],
           },
           {
-            path: ":id",
+            path: ":recipeID",
             element: <RecipePage />,
           },
         ],
