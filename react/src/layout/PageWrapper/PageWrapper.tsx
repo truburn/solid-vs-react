@@ -1,7 +1,7 @@
 import { usePageStyles } from "@/layout/PageWrapper/PageWrapper.styles";
 import { Footer } from "@/layout/Footer";
 import { SideList } from "@/layout/SideList";
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import { InfoPanel } from "@/layout/InfoPanel";
 
 export function PageWrapper() {
@@ -9,6 +9,7 @@ export function PageWrapper() {
 
   return (
     <>
+      <ScrollRestoration />
       <div css={classes.root}>
         <div css={classes.content}>
           <div css={classes.page}>
