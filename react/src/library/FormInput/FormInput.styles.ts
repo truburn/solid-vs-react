@@ -5,7 +5,7 @@ export function useFormInputStyles(multiline?: boolean) {
 
   const root = css({
     fontFamily: theme.fonts.default.name,
-    ...(multiline && { flex: 1 }),
+    ...(multiline && { flex: 1, maxHeight: 300 }),
   });
 
   return { root };

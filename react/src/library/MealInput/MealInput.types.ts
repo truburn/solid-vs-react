@@ -1,6 +1,6 @@
 import { UpdateField } from "@/routes/EditRecipe";
 
 export interface MealInputProps {
-  updateField: UpdateField;
+  updateField?: UpdateField;
   value?: string[];
 }

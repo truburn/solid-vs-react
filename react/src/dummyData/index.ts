@@ -8,7 +8,7 @@ export function getDummySummary(count = 1): string {
     .map(() => {
       return lines[Math.floor(Math.random() * lines.length)];
     });
-  return selection.join(". ");
+  return selection.join(". ").substring(0, 500);
 }
 
 export function getDummyIngredients(count = 3): Ingredient[] {

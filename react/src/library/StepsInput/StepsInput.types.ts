@@ -1,6 +1,6 @@
 import { UpdateField } from "@/routes/EditRecipe";
 
 export interface StepsInputProps {
-  updateField: UpdateField;
+  updateField?: UpdateField;
   value?: RecipeStep[];
 }

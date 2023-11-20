@@ -12,8 +12,6 @@ import { MealInput } from "@/library/MealInput";
 import { ServingsInput } from "@/library/ServingsInput";
 import { IngredientsInput } from "@/library/IngredientsInput";
 import { StepsInput } from "@/library/StepsInput";
-import { Ingredients } from "@/library/Ingredients";
-import { Steps } from "@/library/Steps";
 
 const DEFAULT_RECIPE: Recipe = {
   name: "My Awesome Recipe",
@@ -87,7 +85,7 @@ export function EditRecipe(props: EditRecipeProps) {
           legend="Meal"
           info="Suggested meals to serve this dish"
           input={<MealInput value={recipe.meal} updateField={setFieldValue} />}
-          valueDisplay={prevRecipe && <p>{prevRecipe?.meal?.join(", ")}</p>}
+          valueDisplay={prevRecipe && <MealInput value={prevRecipe.meal} />}
         />
         <FormGroup
           legend="Servings"
@@ -99,10 +97,18 @@ export function EditRecipe(props: EditRecipeProps) {
               servingsValue={recipe.servings}
             />
           }
+          valueDisplay={
+            prevRecipe && (
+              <ServingsInput
+                servingSizeValue={prevRecipe.servingSize}
+                servingsValue={prevRecipe.servings}
+              />
+            )
+          }
         />
         <FormGroup
           legend="Summary"
-          info="Brief description of the recipe"
+          info="Brief description of the recipe (Max 500 Characters)"
           input={
             <FormInput
               name="summary"
@@ -129,9 +135,7 @@ export function EditRecipe(props: EditRecipeProps) {
             />
           }
           valueDisplay={
-            prevRecipe && (
-              <Ingredients noTitle ingredients={prevRecipe?.ingredients} />
-            )
+            prevRecipe && <IngredientsInput value={prevRecipe.ingredients} />
           }
         />
         <FormGroup
@@ -140,9 +144,7 @@ export function EditRecipe(props: EditRecipeProps) {
           input={
             <StepsInput updateField={setFieldValue} value={recipe.steps} />
           }
-          valueDisplay={
-            prevRecipe && <Steps noTitle steps={prevRecipe?.steps} />
-          }
+          valueDisplay={prevRecipe && <StepsInput value={prevRecipe.steps} />}
         />
       </Scrollbar>
       <div css={classes.actions}>

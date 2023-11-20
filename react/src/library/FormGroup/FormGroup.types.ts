@@ -8,3 +8,7 @@ export interface FormGroupProps {
   info?: string;
   error?: string;
 }
+
+export interface FormGroupStyleProps {
+  status: FormGroupProps["fieldState"];
+}

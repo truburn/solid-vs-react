@@ -6,7 +6,9 @@ import kebabCase from "lodash/kebabCase";
 
 export function FormGroup(props: FormGroupProps) {
   const { legend, fieldState = "idle", valueDisplay, input, info } = props;
-  const classes = useFormGroupStyles(fieldState);
+  const classes = useFormGroupStyles({
+    status: fieldState,
+  });
 
   return (
     <fieldset

@@ -2,9 +2,11 @@ import { css, useTheme } from "@emotion/react";
 import { useMemo } from "react";
 import { ThemeColor, ThemeColorKey } from "@/theme";
 import { colorOpacity } from "@/utils";
+import { FormGroupStyleProps } from "@/library/FormGroup";
 
-export function useFormGroupStyles(status?: string) {
+export function useFormGroupStyles(props: FormGroupStyleProps) {
   const theme = useTheme();
+  const { status } = props;
 
   const colorGroup = useMemo<ThemeColor>(() => {
     let colorKey: ThemeColorKey = "standard";
@@ -60,7 +62,6 @@ export function useFormGroupStyles(status?: string) {
       alignItems: "stretch",
       margin: `0 ${theme.spacing.medium}px`,
       overflow: "hidden",
-      maxHeight: 200,
     },
   });
 
