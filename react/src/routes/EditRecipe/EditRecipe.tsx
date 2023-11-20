@@ -1,6 +1,7 @@
 import { Button } from "@/library/Button";
 import { FormGroup } from "@/library/FormGroup";
 import { FormInput } from "@/library/FormInput";
+import { FormTextarea } from "@/library/FormTextarea";
 import { IngredientsInput } from "@/library/IngredientsInput";
 import { MealInput } from "@/library/MealInput";
 import { PageHeader } from "@/library/PageHeader";
@@ -91,12 +92,10 @@ export function EditRecipe() {
             legend="Summary"
             info="Brief description of the recipe (Max 500 Characters)"
             input={
-              <FormInput
+              <FormTextarea
                 name="summary"
                 value={recipe.summary}
                 updateField={updateRecipe}
-                multiline
-                maxLength={500}
               />
             }
             valueDisplay={

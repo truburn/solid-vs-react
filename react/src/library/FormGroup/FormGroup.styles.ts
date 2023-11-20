@@ -62,27 +62,29 @@ export function useFormGroupStyles(props: FormGroupStyleProps) {
       alignItems: "stretch",
       margin: `0 ${theme.spacing.medium}px`,
       overflow: "hidden",
+      "& input, & textarea": {
+        borderStyle: "solid",
+        borderWidth: theme.border.width,
+        borderColor: theme.border.color,
+        borderRadius: theme.border.radius,
+        background: colorGroup.contrast,
+        color: colorGroup.main,
+        padding: theme.spacing.medium,
+        fontFamily: theme.fonts.body.name,
+        fontSize: theme.baseSize,
+      },
     },
   });
 
   const label = css({
-    color: colorGroup.altMain,
+    color: colorGroup.main,
     fontSize: "0.875rem",
-    fontFamily: theme.fonts.body.name,
+    fontFamily: theme.fonts.heading.name,
+    fontWeight: "bold",
     margin: 0,
-    borderStyle: "solid",
-    borderWidth: 0,
-    borderBottomWidth: 1,
     marginBottom: theme.spacing.small,
     padding: `0 ${theme.spacing.small}px`,
   });
 
-  const input = css({
-    fontFamily: theme.fonts.default.name,
-    fontSize: "1rem",
-    color: theme.colors.standard.main,
-    padding: theme.spacing.small,
-  });
-
-  return { root, legend, info, values, label, input };
+  return { root, legend, info, values, label };
 }
