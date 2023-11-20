@@ -5,6 +5,7 @@ export interface ButtonProps {
   disabled?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   label?: string;
+  isSubmit?: boolean;
   color?:
     | "standard"
     | "primary"
