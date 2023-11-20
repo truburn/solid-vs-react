@@ -1,11 +1,10 @@
 import { css, useTheme } from "@emotion/react";
 
-export function useFormInputStyles(multiline?: boolean) {
+export function useFormInputStyles() {
   const theme = useTheme();
 
   const root = css({
     fontFamily: theme.fonts.default.name,
-    ...(multiline && { flex: 1, maxHeight: 300 }),
   });
 
   return { root };

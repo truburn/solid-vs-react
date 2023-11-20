@@ -1,8 +1,8 @@
 import { FormInputProps, useFormInputStyles } from "@/library/FormInput";
 
 export function FormInput(_props: FormInputProps) {
-  const { updateField, multiline, ...props } = _props;
-  const classes = useFormInputStyles(multiline);
+  const { updateField, ...props } = _props;
+  const classes = useFormInputStyles();
 
   const handleOnChange = (evt: any) => {
     const {
@@ -10,17 +10,6 @@ export function FormInput(_props: FormInputProps) {
     } = evt;
     updateField({ [name]: value });
   };
-
-  if (multiline) {
-    return (
-      <textarea
-        rows={5}
-        {...props}
-        onChange={handleOnChange}
-        css={classes.root}
-      />
-    );
-  }
 
   return (
     <input
