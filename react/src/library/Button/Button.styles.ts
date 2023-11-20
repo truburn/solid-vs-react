@@ -18,11 +18,15 @@ export function useButtonStyles(color: ButtonProps["color"] = "standard") {
     borderStyle: "solid",
     padding: `${theme.spacing.thin}px ${theme.spacing.large}px`,
     opacity: 0.5,
-    "&:hover": {
+    "&:enabled:hover": {
       color: theme.colors[color].main,
       background: theme.colors[color].contrast,
       borderColor: theme.colors[color].main,
       opacity: 1,
+    },
+    "&:disabled": {
+      opacity: 0.25,
+      cursor: "not-allowed",
     },
   });
 
