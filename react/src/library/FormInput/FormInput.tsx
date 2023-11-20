@@ -8,7 +8,7 @@ export function FormInput(_props: FormInputProps) {
     const {
       target: { value, name },
     } = evt;
-    updateField(name as string, value);
+    updateField({ [name]: value });
   };
 
   if (multiline) {
@@ -22,5 +22,12 @@ export function FormInput(_props: FormInputProps) {
     );
   }
 
-  return <input {...props} onChange={handleOnChange} css={classes.root} />;
+  return (
+    <input
+      {...props}
+      type="text"
+      onChange={handleOnChange}
+      css={classes.root}
+    />
+  );
 }
