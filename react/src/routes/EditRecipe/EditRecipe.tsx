@@ -21,8 +21,14 @@ export function EditRecipe() {
   const { recipeID } = useParams();
   const classes = useEditRecipeStyles();
   const prevRecipe = usePrevRecipe(recipeID);
-  const { recipe, updateRecipe, disableButtons, resetForm, cancelForm, fieldState } =
-    useEditRecipe(prevRecipe);
+  const {
+    recipe,
+    updateRecipe,
+    disableButtons,
+    resetForm,
+    cancelForm,
+    fieldState,
+  } = useEditRecipe(prevRecipe);
 
   return (
     <>
@@ -42,7 +48,11 @@ export function EditRecipe() {
               prevRecipe && <p css={classes.value}>{prevRecipe?.name}</p>
             }
             fieldState={fieldState("name")}
-            error={fieldState("name") === "error" ? "Don't forget to name your recipe!" : undefined}
+            error={
+              fieldState("name") === "error"
+                ? "Don't forget to name your recipe!"
+                : undefined
+            }
           />
           <FormGroup
             legend="Author"
@@ -116,7 +126,7 @@ export function EditRecipe() {
                 </Scrollbar>
               )
             }
-            fieldState={fieldState('summary')}
+            fieldState={fieldState("summary")}
           />
           <FormGroup
             legend="Ingredients"

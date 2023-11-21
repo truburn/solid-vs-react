@@ -5,7 +5,14 @@ import uniqueId from "lodash/uniqueId";
 import kebabCase from "lodash/kebabCase";
 
 export function FormGroup(props: FormGroupProps) {
-  const { legend, fieldState = "idle", valueDisplay, input, info, error } = props;
+  const {
+    legend,
+    fieldState = "idle",
+    valueDisplay,
+    input,
+    info,
+    error,
+  } = props;
   const classes = useFormGroupStyles({
     status: fieldState,
   });
