@@ -19,6 +19,7 @@ export function FormGroup(props: FormGroupProps) {
 
   return (
     <fieldset
+      className={fieldState}
       css={classes.root}
       name={kebabCase(legend)}
       id={uniqueId(`form-group-${kebabCase(legend)}-`)}

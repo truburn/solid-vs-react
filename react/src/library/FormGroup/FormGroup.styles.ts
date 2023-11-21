@@ -72,7 +72,7 @@ export function useFormGroupStyles(props: FormGroupStyleProps) {
       alignItems: "stretch",
       margin: `0 ${theme.spacing.medium}px`,
       overflow: "hidden",
-      "& input, & textarea": {
+      "& > input, & > textarea": {
         borderStyle: "solid",
         borderWidth: theme.border.width,
         borderColor: status === "idle" ? theme.border.color : colorGroup.main,
