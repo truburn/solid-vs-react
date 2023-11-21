@@ -1,4 +1,7 @@
-import { FormTextareaProps, useFormTextareaStyles } from "@/library/FormTextarea";
+import {
+  FormTextareaProps,
+  useFormTextareaStyles,
+} from "@/library/FormTextarea";
 
 export function FormTextarea(_props: FormTextareaProps) {
   const { updateField, ...props } = _props;
@@ -13,10 +16,10 @@ export function FormTextarea(_props: FormTextareaProps) {
 
   return (
     <textarea
+      maxLength={500}
       {...props}
       onChange={handleOnChange}
       css={classes.root}
-      maxLength={500}
     />
   );
 }

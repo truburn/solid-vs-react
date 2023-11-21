@@ -5,7 +5,7 @@ import uniqueId from "lodash/uniqueId";
 import kebabCase from "lodash/kebabCase";
 
 export function FormGroup(props: FormGroupProps) {
-  const { legend, fieldState = "idle", valueDisplay, input, info } = props;
+  const { legend, fieldState = "idle", valueDisplay, input, info, error } = props;
   const classes = useFormGroupStyles({
     status: fieldState,
   });
@@ -18,6 +18,7 @@ export function FormGroup(props: FormGroupProps) {
     >
       <legend css={classes.legend}>{capitalize(legend)}</legend>
       {info && <p css={classes.info}>{info}</p>}
+      {error && <p css={classes.error}>{error}</p>}
       <div css={classes.values}>
         {valueDisplay && (
           <div>
@@ -26,7 +27,7 @@ export function FormGroup(props: FormGroupProps) {
           </div>
         )}
         <div>
-          {valueDisplay && <label css={classes.label}>New Value</label>}
+          {valueDisplay && <label css={classes.newValueLabel}>New Value</label>}
           {input}
         </div>
       </div>

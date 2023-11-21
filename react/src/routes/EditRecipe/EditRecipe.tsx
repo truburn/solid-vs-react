@@ -21,7 +21,7 @@ export function EditRecipe() {
   const { recipeID } = useParams();
   const classes = useEditRecipeStyles();
   const prevRecipe = usePrevRecipe(recipeID);
-  const { recipe, updateRecipe, disableButtons, resetForm, cancelForm } =
+  const { recipe, updateRecipe, disableButtons, resetForm, cancelForm, fieldState } =
     useEditRecipe(prevRecipe);
 
   return (
@@ -38,7 +38,11 @@ export function EditRecipe() {
                 updateField={updateRecipe}
               />
             }
-            valueDisplay={prevRecipe && <p>{prevRecipe?.name}</p>}
+            valueDisplay={
+              prevRecipe && <p css={classes.value}>{prevRecipe?.name}</p>
+            }
+            fieldState={fieldState("name")}
+            error={fieldState("name") === "error" ? "Don't forget to name your recipe!" : undefined}
           />
           <FormGroup
             legend="Author"
@@ -49,7 +53,10 @@ export function EditRecipe() {
                 updateField={updateRecipe}
               />
             }
-            valueDisplay={prevRecipe && <p>{prevRecipe?.author}</p>}
+            valueDisplay={
+              prevRecipe && <p css={classes.value}>{prevRecipe?.author}</p>
+            }
+            fieldState={fieldState("author")}
           />
           <FormGroup
             legend="Cuisine"
@@ -61,13 +68,17 @@ export function EditRecipe() {
                 updateField={updateRecipe}
               />
             }
-            valueDisplay={prevRecipe && <p>{prevRecipe?.cuisine}</p>}
+            valueDisplay={
+              prevRecipe && <p css={classes.value}>{prevRecipe?.cuisine}</p>
+            }
+            fieldState={fieldState("cuisine")}
           />
           <FormGroup
             legend="Meal"
-            info="Suggested meals to serve this dish"
+            info="Suggested meal times and/or courses to serve this dish"
             input={<MealInput value={recipe.meal} updateField={updateRecipe} />}
             valueDisplay={prevRecipe && <MealInput value={prevRecipe.meal} />}
+            fieldState={fieldState("meal")}
           />
           <FormGroup
             legend="Servings"
@@ -90,7 +101,7 @@ export function EditRecipe() {
           />
           <FormGroup
             legend="Summary"
-            info="Brief description of the recipe (Max 500 Characters)"
+            info="Brief description of the recipe"
             input={
               <FormTextarea
                 name="summary"
@@ -105,6 +116,7 @@ export function EditRecipe() {
                 </Scrollbar>
               )
             }
+            fieldState={fieldState('summary')}
           />
           <FormGroup
             legend="Ingredients"
@@ -118,6 +130,7 @@ export function EditRecipe() {
             valueDisplay={
               prevRecipe && <IngredientsInput value={prevRecipe.ingredients} />
             }
+            fieldState={fieldState("ingredients")}
           />
           <FormGroup
             legend="Steps"
@@ -126,6 +139,7 @@ export function EditRecipe() {
               <StepsInput updateField={updateRecipe} value={recipe.steps} />
             }
             valueDisplay={prevRecipe && <StepsInput value={prevRecipe.steps} />}
+            fieldState={fieldState("steps")}
           />
         </Scrollbar>
         <div css={classes.actions}>

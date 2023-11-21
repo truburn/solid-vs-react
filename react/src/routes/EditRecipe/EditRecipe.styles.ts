@@ -24,5 +24,10 @@ export function useEditRecipeStyles() {
     },
   });
 
-  return { root, actions };
+  const value = css({
+    margin: 0,
+    padding: theme.spacing.medium,
+  });
+
+  return { root, actions, value };
 }

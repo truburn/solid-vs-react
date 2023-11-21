@@ -45,5 +45,21 @@ export function useEditRecipe(prevRecipe: Recipe | null) {
     navigate(-1);
   };
 
-  return { recipe, updateRecipe, disableButtons, resetForm, cancelForm };
+  const fieldState = (key: keyof Recipe) => {
+    const origVal: Recipe = prevRecipe ?? INTIAL_RECIPE;
+    const fieldIsEqual = isEqual(origVal[key], recipe[key]);
+
+    if (key === "name" && recipe.name.length === 0) return "error";
+
+    return fieldIsEqual ? "idle" : "changed";
+  };
+
+  return {
+    recipe,
+    updateRecipe,
+    disableButtons,
+    resetForm,
+    cancelForm,
+    fieldState,
+  };
 }

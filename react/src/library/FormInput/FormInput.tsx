@@ -13,6 +13,7 @@ export function FormInput(_props: FormInputProps) {
 
   return (
     <input
+      maxLength={50}
       {...props}
       type="text"
       onChange={handleOnChange}

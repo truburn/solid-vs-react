@@ -82,7 +82,10 @@ export function getDummyRecipes(count = 1): Recipe | Recipe[] {
 
       return {
         recipeID: generateUID(),
-        name: sentence.slice(0, Math.ceil(Math.random() * 6) + 2).join(" "),
+        name: sentence
+          .slice(0, Math.ceil(Math.random() * 6) + 2)
+          .join(" ")
+          .substring(0, 50),
         author: "Anonymous",
         summary: getDummySummary(Math.ceil(Math.random() * 10) + 2),
         cuisine: cuisines[Math.floor(Math.random() * cuisines.length)],

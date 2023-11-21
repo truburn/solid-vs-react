@@ -49,6 +49,16 @@ export function useFormGroupStyles(props: FormGroupStyleProps) {
     color: theme.colors.info.main,
   });
 
+  const error = css({
+    background: theme.colors.error.main,
+    color: theme.colors.error.contrast,
+    fontFamily: theme.fonts.default.name,
+    fontWeight: "bold",
+    padding: theme.spacing.small,
+    borderRadius: theme.border.radius,
+    textAlign: "center",
+  });
+
   const values = css({
     display: "flex",
     flexDirection: "row",
@@ -65,26 +75,36 @@ export function useFormGroupStyles(props: FormGroupStyleProps) {
       "& input, & textarea": {
         borderStyle: "solid",
         borderWidth: theme.border.width,
-        borderColor: theme.border.color,
+        borderColor: status === "idle" ? theme.border.color : colorGroup.main,
         borderRadius: theme.border.radius,
         background: colorGroup.contrast,
         color: colorGroup.main,
         padding: theme.spacing.medium,
         fontFamily: theme.fonts.body.name,
         fontSize: theme.baseSize,
+        outlineColor: colorGroup.main,
       },
     },
   });
 
-  const label = css({
-    color: colorGroup.main,
+  const labelProps = {
     fontSize: "0.875rem",
     fontFamily: theme.fonts.heading.name,
     fontWeight: "bold",
     margin: 0,
     marginBottom: theme.spacing.small,
     padding: `0 ${theme.spacing.small}px`,
+  };
+
+  const label = css({
+    ...labelProps,
+    color: theme.colors.standard.main,
   });
 
-  return { root, legend, info, values, label };
+  const newValueLabel = css({
+    ...labelProps,
+    color: colorGroup.main,
+  });
+
+  return { root, legend, info, error, values, label, newValueLabel };
 }
