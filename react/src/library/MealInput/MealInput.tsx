@@ -17,7 +17,9 @@ export function MealInput(props: MealInputProps) {
   const classes = useMealInputStyles(readonly);
 
   const toggleCheckbox = (evt: any) => {
-    const { target: { checked, value: newValue } } = evt;
+    const {
+      target: { checked, value: newValue },
+    } = evt;
     const mealValue = newValue as Meal;
     let tmpList: Meal[] = [...value];
 
@@ -28,17 +30,25 @@ export function MealInput(props: MealInputProps) {
     }
 
     updateField && updateField({ meal: tmpList });
-  }
+  };
 
   return (
     <div css={classes.root}>
       <ul css={classes.list}>
-        {value.map((meal) => <li key={meal}>{meal}</li>)}
+        {value.map((meal) => (
+          <li key={meal}>{capitalize(meal)}</li>
+        ))}
       </ul>
       <div css={classes.inputs}>
         {MEAL_LIST.map((meal) => (
           <label key={meal} css={classes.checkbox}>
-            <input type="checkbox" value={meal} disabled={readonly} checked={value?.includes(meal)} onChange={toggleCheckbox} />
+            <input
+              type="checkbox"
+              value={meal}
+              disabled={readonly}
+              checked={value?.includes(meal)}
+              onChange={toggleCheckbox}
+            />
             {capitalize(meal)}
           </label>
         ))}
