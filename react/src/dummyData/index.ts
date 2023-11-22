@@ -47,6 +47,7 @@ export function getDummyRecipes(count = 1): Recipe | Recipe[] {
     "French",
     "Italian",
   ];
+  const units: string[] = Object.values(MeasureUnit);
 
   const recipes = Array(count)
     .fill("Recipe")
@@ -84,6 +85,11 @@ export function getDummyRecipes(count = 1): Recipe | Recipe[] {
         steps,
         created: new Date(),
         updated: Math.random() > 0.5 ? new Date() : undefined,
+        servings: Math.ceil(Math.random() * 10),
+        servingSize: {
+          qty: Math.ceil(Math.random() * 2),
+          unit: units[Math.floor(Math.random() * units.length)],
+        },
       };
     });
 
