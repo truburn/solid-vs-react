@@ -1,4 +1,7 @@
+import { Ingredient, MeasureUnit } from "@/library/Ingredients";
 import textOptions from "./textOptions.json";
+import { RecipeStep } from "@/library/Steps";
+import { Recipe } from "@/routes/RecipePage";
 
 export function getDummySummary(count = 1): string {
   const group = textOptions[Math.floor(Math.random() * textOptions.length)];
@@ -12,20 +15,7 @@ export function getDummySummary(count = 1): string {
 }
 
 export function getDummyIngredients(count = 3): Ingredient[] {
-  const units: MeasureUnit[] = [
-    "tsp",
-    "tbl",
-    "c",
-    "pt",
-    "qt",
-    "gal",
-    "oz",
-    "lb(s)",
-    "g",
-    "kg",
-    "ml",
-    "L",
-  ];
+  const units: string[] = Object.values(MeasureUnit);
 
   return Array(count)
     .fill("Ingredient")

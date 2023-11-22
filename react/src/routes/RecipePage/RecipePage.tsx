@@ -5,7 +5,7 @@ import { useAppContext } from "@/layout/AppProvider";
 import { getDummyRecipes } from "@/dummyData";
 import { RecipeSummary } from "@/library/RecipeSummary";
 import { RecipeInfo } from "@/library/RecipeInfo";
-import { useRecipePageStyles } from "@/routes/RecipePage";
+import { Recipe, useRecipePageStyles } from "@/routes/RecipePage";
 import { Ingredients } from "@/library/Ingredients";
 import { Steps } from "@/library/Steps";
 

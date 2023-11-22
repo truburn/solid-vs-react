@@ -1,3 +1,5 @@
+import { Recipe } from "@/routes/RecipePage";
+
 export interface EditRecipeProps {}
 
 export type UpdateField = (newValue: Partial<Recipe>) => void;

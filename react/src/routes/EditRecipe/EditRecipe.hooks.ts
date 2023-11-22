@@ -3,6 +3,7 @@ import { getDummyRecipes } from "@/dummyData";
 import { INTIAL_RECIPE } from "@/routes/EditRecipe";
 import isEqual from "lodash/isEqual";
 import { useNavigate } from "react-router-dom";
+import { Recipe } from "@/routes/RecipePage";
 
 export function usePrevRecipe(recipeID?: Recipe["recipeID"]) {
   const recipe = useMemo<Recipe | null>(() => {

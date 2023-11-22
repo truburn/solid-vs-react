@@ -1,4 +1,4 @@
-import { MealInputProps, useMealInputStyles } from "@/library/MealInput";
+import { Meal, MealInputProps, useMealInputStyles } from "@/library/MealInput";
 import capitalize from "lodash/capitalize";
 
 const MEAL_LIST: Meal[] = [

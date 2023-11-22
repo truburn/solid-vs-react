@@ -4,6 +4,7 @@ import { Scrollbar } from "@/library/Scrollbar";
 import { RecipeCard } from "@/library/RecipeCard";
 import { getDummyRecipes } from "@/dummyData";
 import { useMemo } from "react";
+import type { Recipe } from "@/routes/RecipePage";
 
 export function SideList() {
   const { showList } = useAppContext();

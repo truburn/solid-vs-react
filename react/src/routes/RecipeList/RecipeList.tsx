@@ -8,6 +8,7 @@ import { getDummyRecipes } from "@/dummyData";
 import { useMemo } from "react";
 import { RecipeCard } from "@/library/RecipeCard";
 import { useRecipeListStyles } from "@/routes/RecipeList";
+import { Recipe } from "@/routes/RecipePage";
 
 export function RecipeList() {
   useClearSides();
