@@ -58,8 +58,15 @@ export function GlobalStyles() {
             margin: `${theme.spacing.small}px 0`,
             marginRight: theme.spacing.small,
             color: theme.colors.standard.main,
+            '&:hover': {
+              fontWeight: 'bold',
+            },
             "&:has(input:disabled)": {
               opacity: 0.5,
+              cursor: 'not-allowed',
+              '&:hover': {
+                fontWeight: 'normal',
+              }
             },
             "& > input": {
               display: "grid",
@@ -78,14 +85,14 @@ export function GlobalStyles() {
               cursor: "inherit",
               "&::before": {
                 content: '""',
-                width: "1.5em",
-                height: "1.325em",
+                width: "1.65em",
+                height: "1.35em",
                 transform: "scale(0)",
                 transition: "120ms transform ease-in-out",
                 boxShadow: "inset 1em 1em currentcolor",
                 transformOrigin: "center",
                 clipPath:
-                  "polygon(14% 35%, 0 55%, 50% 100%, 100% 0%, 80% 0%, 43% 62%)",
+                  "polygon(14% 35%, 0 55%, 50% 100%, 100% 0%, 90% 0%, 43% 62%)",
               },
               "&:checked": {
                 "&::before": {
