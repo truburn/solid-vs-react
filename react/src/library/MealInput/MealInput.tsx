@@ -41,6 +41,7 @@ export function MealInput(props: MealInputProps) {
           <label key={meal} css={classes.checkbox}>
             <input
               type="checkbox"
+              name={`meal-${meal}`}
               value={meal}
               disabled={readonly}
               checked={value?.includes(meal)}
