@@ -50,7 +50,7 @@ export function GlobalStyles() {
               color: theme.colors.secondary.main,
             },
           },
-          'input, textarea': {
+          "input, textarea": {
             borderStyle: "solid",
             borderWidth: theme.border.width,
             borderColor: theme.border.color,
@@ -70,15 +70,15 @@ export function GlobalStyles() {
             margin: `${theme.spacing.small}px 0`,
             marginRight: theme.spacing.small,
             color: theme.colors.standard.main,
-            '&:hover': {
-              fontWeight: 'bold',
+            "&:hover": {
+              fontWeight: "bold",
             },
             "&:has(input:disabled)": {
               opacity: 0.5,
-              cursor: 'not-allowed',
-              '&:hover': {
-                fontWeight: 'normal',
-              }
+              cursor: "not-allowed",
+              "&:hover": {
+                fontWeight: "normal",
+              },
             },
             "& > input": {
               display: "grid",

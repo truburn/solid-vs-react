@@ -19,37 +19,20 @@ export function useMealInputStyles(readonly?: boolean) {
       margin: `${theme.spacing.small}px 0`,
       padding: 0,
     },
-  });
-
-  const list = css({
-    marginTop: theme.spacing.small,
-    padding: 0,
-    listStyle: "none",
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
-    flexWrap: "wrap",
-    "& li": {
-      margin: `${theme.spacing.thin}px ${theme.spacing.small}px`,
-      padding: `${theme.spacing.thin}px 0.5rem`,
-      background: theme.colors.standard.main,
-      color: theme.colors.standard.contrast,
-      borderRadius: "0.75rem",
-      fontSize: "0.75rem",
-      lineHeight: 1,
-      fontWeight: theme.fonts.default.weight?.light,
-      ...(!readonly && {
-        ".changed &": {
-          background: theme.colors.secondary.main,
-          color: theme.colors.secondary.contrast,
-        },
-        ".error &": {
-          background: theme.colors.error.main,
-          color: theme.colors.error.contrast,
-        },
-      }),
+    "& ul": {
+      marginTop: theme.spacing.medium,
+      marginBottom: theme.spacing.large,
     },
+    ...(!readonly && {
+      ".changed & li": {
+        background: theme.colors.secondary.main,
+        color: theme.colors.secondary.contrast,
+      },
+      ".error & li": {
+        background: theme.colors.error.main,
+        color: theme.colors.error.contrast,
+      },
+    }),
   });
 
   const inputs = css({
@@ -72,5 +55,5 @@ export function useMealInputStyles(readonly?: boolean) {
     }),
   });
 
-  return { root, list, inputs, checkbox };
+  return { root, inputs, checkbox };
 }

@@ -1,4 +1,5 @@
-import { Meal, MealInputProps, useMealInputStyles } from "@/library/MealInput";
+import { MealInputProps, useMealInputStyles } from "@/library/MealInput";
+import { Meal, MealList } from "@/library/MealList";
 import capitalize from "lodash/capitalize";
 
 const MEAL_LIST: Meal[] = [
@@ -29,18 +30,14 @@ export function MealInput(props: MealInputProps) {
       tmpList = tmpList.filter((val) => val !== mealValue);
     }
 
-    updateField && updateField({ meal: tmpList });
+    updateField && updateField({ meal: tmpList.sort() });
   };
 
   return (
     <div css={classes.root}>
-      <ul css={classes.list}>
-        {value.map((meal) => (
-          <li key={meal}>{capitalize(meal)}</li>
-        ))}
-      </ul>
+      <MealList meals={value} />
       <div css={classes.inputs}>
-        {MEAL_LIST.map((meal) => (
+        {MEAL_LIST.sort().map((meal) => (
           <label key={meal} css={classes.checkbox}>
             <input
               type="checkbox"

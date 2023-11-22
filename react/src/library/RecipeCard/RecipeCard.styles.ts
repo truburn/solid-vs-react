@@ -26,6 +26,10 @@ export function useRecipeCardStyles(isCompact?: boolean) {
       borderColor: theme.colors.primary.main,
       color: theme.colors.primary.main,
       background: theme.colors.primary.contrast,
+      "& li": {
+        background: theme.colors.primary.altContrast,
+        color: theme.colors.primary.altMain,
+      },
     },
   });
 
@@ -87,33 +91,5 @@ export function useRecipeCardStyles(isCompact?: boolean) {
     fontSize: "0.875rem",
   });
 
-  const meals = css({
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "stretch",
-    justifyContent: isCompact ? "flex-start" : "flex-end",
-    margin: 0,
-    padding: 0,
-    listStyle: "none",
-    "& li": {
-      display: "flex",
-      alignItems: "center",
-      margin: theme.spacing.thin,
-      padding: "0 0.5rem",
-      fontSize: "0.75rem",
-      fontWeight: theme.fonts.default.weight?.light,
-      background: theme.colors.secondary.altContrast,
-      color: theme.colors.secondary.altMain,
-      whiteSpace: "nowrap",
-      height: "1rem",
-      borderRadius: "0.5rem",
-      "a:hover &": {
-        background: theme.colors.primary.altContrast,
-        color: theme.colors.primary.altMain,
-      },
-    },
-  });
-
-  return { root, card, meta, title, summary, info, cuisine, meals };
+  return { root, card, meta, title, summary, info, cuisine };
 }

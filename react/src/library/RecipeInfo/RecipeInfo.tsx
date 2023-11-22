@@ -1,6 +1,6 @@
 import { RecipeInfoProps, useRecipeInfoStyles } from "@/library/RecipeInfo";
 import { SectionHeader } from "@/library/SectionHeader";
-import capitalize from "lodash/capitalize";
+import { MealList } from "@/library/MealList";
 
 export function RecipeInfo(props: RecipeInfoProps) {
   const {
@@ -28,11 +28,7 @@ export function RecipeInfo(props: RecipeInfoProps) {
       {meal && (
         <div css={classes.info}>
           <p css={classes.label}>Meal:</p>
-          <ul css={classes.meal}>
-            {meal.map((m) => (
-              <li key={m}>{capitalize(m)}</li>
-            ))}
-          </ul>
+          <MealList meals={meal} />
         </div>
       )}
     </div>

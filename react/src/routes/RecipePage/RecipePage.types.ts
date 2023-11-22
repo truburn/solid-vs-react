@@ -1,5 +1,5 @@
 import { Ingredient, MeasureUnit } from "@/library/Ingredients";
-import { Meal } from "@/library/MealInput";
+import { Meal } from "@/library/MealList";
 import { RecipeStep } from "@/library/Steps";
 
 export interface Recipe {

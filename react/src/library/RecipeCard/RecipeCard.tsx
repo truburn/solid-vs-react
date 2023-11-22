@@ -1,6 +1,7 @@
 import { useRecipeCardStyles, RecipeCardProps } from "@/library/RecipeCard";
 import { Link } from "react-router-dom";
 import { useMemo } from "react";
+import { MealList } from "@/library/MealList";
 
 export function RecipeCard(props: RecipeCardProps) {
   const { recipe, compact } = props;
@@ -31,9 +32,11 @@ export function RecipeCard(props: RecipeCardProps) {
         <p css={classes.summary}>{summary}</p>
         <div css={classes.info}>
           <p css={classes.cuisine}>{recipe.cuisine}</p>
-          <ul css={classes.meals}>
-            {recipe.meal?.map((m) => <li key={m}>{m}</li>)}
-          </ul>
+          <MealList
+            meals={recipe.meal}
+            color="secondary"
+            align={compact ? "left" : "right"}
+          />
         </div>
       </Link>
     </li>

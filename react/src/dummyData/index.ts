@@ -80,7 +80,7 @@ export function getDummyRecipes(count = 1): Recipe | Recipe[] {
         author: "Anonymous",
         summary: getDummySummary(Math.ceil(Math.random() * 10) + 2),
         cuisine: cuisines[Math.floor(Math.random() * cuisines.length)],
-        meal,
+        meal: meal.sort(),
         ingredients: getDummyIngredients(Math.ceil(Math.random() * 10) + 3),
         steps,
         created: new Date(),
