@@ -1,7 +1,8 @@
-import { Ingredient, MeasureUnit } from "@/library/Ingredients";
+import { Ingredient } from "@/library/Ingredients";
 import textOptions from "./textOptions.json";
 import { RecipeStep } from "@/library/Steps";
 import { Recipe } from "@/routes/RecipePage";
+import { MeasureUnit } from "@/form/MeasurementInput";
 
 export function getDummySummary(count = 1): string {
   const group = textOptions[Math.floor(Math.random() * textOptions.length)];
