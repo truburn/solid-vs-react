@@ -1,7 +1,7 @@
 import {
   FormTextareaProps,
   useFormTextareaStyles,
-} from "@/library/FormTextarea";
+} from "@/form/FormTextarea";
 
 export function FormTextarea(_props: FormTextareaProps) {
   const { updateField, ...props } = _props;

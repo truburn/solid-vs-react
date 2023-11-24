@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { FormGroupProps, useFormGroupStyles } from "@/library/FormGroup";
+import { FormGroupProps, useFormGroupStyles } from "@/form/FormGroup";
 import capitalize from "lodash/capitalize";
 import uniqueId from "lodash/uniqueId";
 import kebabCase from "lodash/kebabCase";

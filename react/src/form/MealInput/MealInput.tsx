@@ -1,4 +1,4 @@
-import { MealInputProps, useMealInputStyles } from "@/library/MealInput";
+import { MealInputProps, useMealInputStyles } from "@/form/MealInput";
 import { Meal, MealList } from "@/library/MealList";
 import capitalize from "lodash/capitalize";
 

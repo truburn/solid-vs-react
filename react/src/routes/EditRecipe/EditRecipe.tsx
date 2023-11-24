@@ -1,13 +1,13 @@
 import { Button } from "@/library/Button";
-import { FormGroup } from "@/library/FormGroup";
-import { FormInput } from "@/library/FormInput";
-import { FormTextarea } from "@/library/FormTextarea";
-import { IngredientsInput } from "@/library/IngredientsInput";
-import { MealInput } from "@/library/MealInput";
+import { FormGroup } from "@/form/FormGroup";
+import { FormInput } from "@/form/FormInput";
+import { FormTextarea } from "@/form/FormTextarea";
+import { IngredientsInput } from "@/form/IngredientsInput";
+import { MealInput } from "@/form/MealInput";
 import { PageHeader } from "@/library/PageHeader";
 import { Scrollbar } from "@/library/Scrollbar";
-import { ServingsInput } from "@/library/ServingsInput";
-import { StepsInput } from "@/library/StepsInput";
+import { ServingsInput } from "@/form/ServingsInput";
+import { StepsInput } from "@/form/StepsInput";
 import {
   useEditRecipe,
   useEditRecipeStyles,

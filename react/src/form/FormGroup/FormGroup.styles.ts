@@ -2,7 +2,7 @@ import { css, useTheme } from "@emotion/react";
 import { useMemo } from "react";
 import { ThemeColor, ThemeColorKey } from "@/theme";
 import { colorOpacity } from "@/utils";
-import { FormGroupStyleProps } from "@/library/FormGroup";
+import { FormGroupStyleProps } from "@/form/FormGroup";
 
 export function useFormGroupStyles(props: FormGroupStyleProps) {
   const theme = useTheme();

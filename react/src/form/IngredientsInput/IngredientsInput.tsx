@@ -1,7 +1,7 @@
 import {
   IngredientsInputProps,
   useIngredientsInputStyles,
-} from "@/library/IngredientsInput";
+} from "@/form/IngredientsInput";
 
 export function IngredientsInput(props: IngredientsInputProps) {
   const { updateField } = props;

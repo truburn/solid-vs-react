@@ -1,4 +1,4 @@
-import { StepsInputProps, useStepsInputStyles } from "@/library/StepsInput";
+import { StepsInputProps, useStepsInputStyles } from "@/form/StepsInput";
 
 export function StepsInput(props: StepsInputProps) {
   const { updateField } = props;

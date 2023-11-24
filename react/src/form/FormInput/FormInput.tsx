@@ -1,4 +1,4 @@
-import { FormInputProps, useFormInputStyles } from "@/library/FormInput";
+import { FormInputProps, useFormInputStyles } from "@/form/FormInput";
 
 export function FormInput(_props: FormInputProps) {
   const { updateField, ...props } = _props;
