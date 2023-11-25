@@ -14,6 +14,17 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    options: {
+      storySort: {
+        order: [
+          "Elements",
+          "Components",
+          "Form",
+          ["Elements", "Components"],
+          "Layout",
+        ],
+      },
+    },
   },
   decorators: [
     withThemeFromJSXProvider({
