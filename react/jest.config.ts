@@ -4,4 +4,5 @@ export default {
   coverageDirectory: "coverage",
   testEnvironment: "jsdom",
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  modulePathIgnorePatterns: ["node_modules", ".jest-test-results.json"],
 };

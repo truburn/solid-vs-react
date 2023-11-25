@@ -11,10 +11,13 @@
     "prettier:check": "npx prettier . --check",
     "prettier:write": "npx prettier . --write",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "test-storybook": "test-storybook",
-    "test": "jest",
-    "test:coverage": "jest --coverage"
+    "prebuild:storybook": "npm run test:generate-output",
+    "build:storybook": "storybook build",
+    "test:storybook": "test-storybook",
+    "test": "jest --passWithNoTests",
+    "test:coverage": "jest --passWithNoTests --coverage",
+    "test:generate-output": "jest --passWithNoTests --json --outputFile=.jest-test-results.json",
+    "test:typescript": "tsc"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -39,6 +42,7 @@
     "@storybook/addon-coverage": "^1.0.0",
     "@storybook/addon-essentials": "^7.5.3",
     "@storybook/addon-interactions": "^7.5.3",
+    "@storybook/addon-jest": "^7.5.3",
     "@storybook/addon-links": "^7.5.3",
     "@storybook/addon-onboarding": "^1.0.8",
     "@storybook/addon-themes": "^7.5.3",

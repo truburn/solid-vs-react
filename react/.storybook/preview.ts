@@ -2,6 +2,8 @@ import type { Preview } from "@storybook/react";
 import { withThemeFromJSXProvider } from "@storybook/addon-themes";
 import { ThemeProvider } from "@emotion/react";
 import { theme, GlobalStyles } from "../src/theme";
+import { withTests } from "@storybook/addon-jest";
+import results from "../.jest-test-results.json";
 
 const preview: Preview = {
   parameters: {
@@ -22,6 +24,7 @@ const preview: Preview = {
       Provider: ThemeProvider,
       GlobalStyles,
     }),
+    withTests({ results }),
   ],
 };
 

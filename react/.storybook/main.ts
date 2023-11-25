@@ -11,6 +11,7 @@ const config: StorybookConfig = {
     "@storybook/addon-coverage",
     "storybook-addon-react-router-v6",
     "@storybook/addon-themes",
+    "@storybook/addon-jest",
   ],
   framework: {
     name: "@storybook/react-vite",
