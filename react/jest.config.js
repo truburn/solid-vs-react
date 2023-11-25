@@ -3,6 +3,6 @@ export default {
   collectCoverageFrom: ["src/**/*.{ts,tsx}"],
   coverageDirectory: "coverage",
   testEnvironment: "jsdom",
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   modulePathIgnorePatterns: ["node_modules", ".jest-test-results.json"],
 };
