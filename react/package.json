@@ -33,13 +33,13 @@
     "react-router-dom": "^6.18.0"
   },
   "devDependencies": {
-    "@react-theming/storybook-addon": "^1.1.10",
     "@storybook/addon-a11y": "^7.5.3",
     "@storybook/addon-coverage": "^1.0.0",
     "@storybook/addon-essentials": "^7.5.3",
     "@storybook/addon-interactions": "^7.5.3",
     "@storybook/addon-links": "^7.5.3",
     "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/addon-themes": "^7.5.3",
     "@storybook/blocks": "^7.5.3",
     "@storybook/jest": "^0.2.3",
     "@storybook/react": "^7.5.3",
