@@ -18,7 +18,8 @@ const config: StorybookConfig = {
     options: {},
   },
   docs: {
-    autodocs: "tag",
+    autodocs: true,
+    defaultName: "Props",
   },
 };
 export default config;

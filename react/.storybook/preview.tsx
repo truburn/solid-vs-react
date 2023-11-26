@@ -4,6 +4,9 @@ import { ThemeProvider } from "@emotion/react";
 import { theme, GlobalStyles } from "../src/theme";
 import { withTests } from "@storybook/addon-jest";
 import results from "../.jest-test-results.json";
+import { Title, Description, Subtitle } from "@storybook/blocks";
+import React from "react";
+import { ImportStatement, PropsTable } from "./blocks";
 
 const preview: Preview = {
   parameters: {
@@ -18,6 +21,18 @@ const preview: Preview = {
       storySort: {
         order: ["elements", "components", "FormElements", "FormComponents"],
       },
+    },
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <ImportStatement />
+          <h2>Description</h2>
+          <Description />
+          <PropsTable />
+        </>
+      )
     },
   },
   decorators: [
