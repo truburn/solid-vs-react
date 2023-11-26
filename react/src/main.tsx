@@ -1,5 +1,5 @@
-import { AppProvider } from "@/layout/AppProvider";
-import { router } from "@/routes";
+import { AppProvider } from "@/layout/App";
+import { router } from "@/pages/routes";
 import { GlobalStyles, theme } from "@/theme";
 import { ThemeProvider } from "@emotion/react";
 import React from "react";
