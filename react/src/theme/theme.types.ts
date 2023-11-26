@@ -16,7 +16,10 @@ interface ThemeFont {
   };
 }
 
-export type ThemeColorKey = keyof MCTheme["colors"];
+export type ThemeColorKey = Omit<
+  keyof MCTheme["colors"],
+  "background" | "panel"
+>;
 
 export interface MCTheme {
   baseSize: number;

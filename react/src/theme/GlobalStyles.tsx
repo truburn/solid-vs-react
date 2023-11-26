@@ -37,6 +37,13 @@ export function GlobalStyles() {
             alignItems: "stretch",
             justifyContent: "space-between",
           },
+          "#storybook-docs": {
+            overflow: "auto",
+            height: "100%",
+            p: {
+              fontFamily: "unset"
+            }
+          },
           p: {
             fontFamily: theme.fonts.body.name,
             margin: 0,
