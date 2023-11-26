@@ -16,13 +16,7 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: [
-          "Elements",
-          "Components",
-          "Form",
-          ["Elements", "Components"],
-          "Layout",
-        ],
+        order: ["elements", "components", "FormElements", "FormComponents"],
       },
     },
   },

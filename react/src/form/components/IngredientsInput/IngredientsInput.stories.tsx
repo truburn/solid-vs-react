@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { IngredientsInput as IngredientsInputComponent } from "./IngredientsInput";
 
 const meta: Meta<typeof IngredientsInputComponent> = {
+  title: "FormComponents/IngredientsInput",
   component: IngredientsInputComponent,
 };
 
