@@ -41,8 +41,8 @@ export function GlobalStyles() {
             overflow: "auto",
             height: "100%",
             p: {
-              fontFamily: "unset"
-            }
+              fontFamily: "unset",
+            },
           },
           p: {
             fontFamily: theme.fonts.body.name,
