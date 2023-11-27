@@ -4,7 +4,13 @@ import kebabCase from "lodash/kebabCase";
 import { Source } from "@storybook/blocks";
 
 /** Block that displays the import statement for the component */
-export function ImportStatement({suffix = "", prefix = "" }: { suffix?: string, prefix?: string }) {
+export function ImportStatement({
+  suffix = "",
+  prefix = "",
+}: {
+  suffix?: string;
+  prefix?: string;
+}) {
   const resolvedOf = useOf("story");
 
   const statement = useMemo<string | null>(() => {

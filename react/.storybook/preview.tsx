@@ -16,6 +16,8 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+      sort: "requiredFirst",
+      exclude: ["onClick"],
     },
     options: {
       storySort: {
@@ -32,7 +34,7 @@ const preview: Preview = {
           <Description />
           <PropsTable />
         </>
-      )
+      ),
     },
   },
   decorators: [
@@ -46,6 +48,23 @@ const preview: Preview = {
     }),
     withTests({ results }),
   ],
+  argTypes: {
+    colorKey: {
+      defaultValue: "standard",
+      options: [
+        "standard",
+        "primary",
+        "secondary",
+        "info",
+        "success",
+        "warning",
+        "error",
+      ],
+    },
+    onClick: {
+      type: "function",
+    },
+  },
 };
 
 export default preview;

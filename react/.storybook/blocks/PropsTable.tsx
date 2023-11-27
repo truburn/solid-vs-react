@@ -13,7 +13,7 @@ export function PropsTable() {
 
       return component;
     }
-    
+
     return "";
   }, [resolvedOf]);
 
@@ -21,7 +21,7 @@ export function PropsTable() {
     <>
       <h2>{`${title}Props`}</h2>
       <ImportStatement suffix="Props" />
-      <ArgTypes />
+      <ArgTypes sort="requiredFirst" />
     </>
-  )
+  );
 }
