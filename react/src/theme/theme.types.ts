@@ -16,10 +16,16 @@ interface ThemeFont {
   };
 }
 
-export type ThemeColorKey = Omit<
-  keyof MCTheme["colors"],
-  "background" | "panel"
->;
+export type ThemeColorKey =
+  | "standard"
+  | "primary"
+  | "secondary"
+  | "info"
+  | "success"
+  | "warning"
+  | "error";
+
+export type ThemeFontKey = "default" | "body" | "heading";
 
 export interface MCTheme {
   baseSize: number;

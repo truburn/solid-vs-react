@@ -44,6 +44,11 @@ export function GlobalStyles() {
               fontFamily: "unset",
             },
           },
+          "#storybook-root": {
+            width: "100%",
+            height: "100%",
+            overflow: "hidden",
+          },
           p: {
             fontFamily: theme.fonts.body.name,
             margin: 0,
