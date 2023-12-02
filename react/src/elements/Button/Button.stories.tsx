@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button as ButtonComponent } from "./Button";
-import { ButtonVariant } from "./Button.types";
-import { ButtonStory } from "./ButtonStory";
+import { Button as ButtonComponent, ButtonVariant } from "@/elements/Button";
 import { faRocketLaunch } from "@fortawesome/pro-duotone-svg-icons";
-import { colorKey, fontKey, icon } from "../../storybook/argTypes";
+import { colorKey, fontKey, icon } from "@/storybook/argTypes";
+import { ButtonStory } from "./ButtonStory";
 
 const meta: Meta<typeof ButtonComponent> = {
   component: ButtonComponent,

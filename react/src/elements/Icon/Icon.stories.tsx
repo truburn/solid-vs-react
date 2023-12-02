@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Icon as IconComponent } from "./Icon";
+import { Icon as IconComponent } from "@/elements/Icon";
 import { faRocketLaunch } from "@fortawesome/pro-duotone-svg-icons";
-import { icon } from "../../storybook/argTypes";
-import { theme } from "../../theme";
+import { icon } from "@/storybook/argTypes";
+import { theme } from "@/theme";
 
 const meta: Meta<typeof IconComponent> = {
   component: IconComponent,

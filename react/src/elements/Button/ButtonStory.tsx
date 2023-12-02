@@ -1,8 +1,12 @@
-import { ButtonProps, ButtonStyle, ButtonVariant } from "./Button.types";
+import {
+  ButtonProps,
+  ButtonStyle,
+  ButtonVariant,
+  Button,
+} from "@/elements/Button";
 import { ThemeColorKey } from "@/theme";
 import kebabCase from "lodash/kebabCase";
 import startCase from "lodash/startCase";
-import Button from "./Button";
 import { css } from "@emotion/react";
 
 const colorKeys: ThemeColorKey[] = [
