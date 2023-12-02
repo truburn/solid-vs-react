@@ -12,6 +12,7 @@ const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
+      expanded: true,
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,
@@ -52,8 +53,8 @@ const preview: Preview = {
     id: {
       control: { type: "text" },
       table: {
-        defaultValue: { summary: "Generated string" }
-      }
+        defaultValue: { summary: "Generated string" },
+      },
     },
   },
 };
