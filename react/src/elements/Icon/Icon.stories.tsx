@@ -15,8 +15,8 @@ const meta: Meta<typeof IconComponent> = {
   args: {
     icon: faRocketLaunch,
     style: {
-      width: "2rem",
-      height: "2rem",
+      width: "25%",
+      height: "25%",
       color: theme.colors.primary.main,
     },
   },
@@ -29,4 +29,10 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Icon: Story = {};
+export const Icon: Story = {
+  render: (args) => (
+    <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center"}}>
+      <IconComponent {...args} />
+    </div>
+  )
+};
