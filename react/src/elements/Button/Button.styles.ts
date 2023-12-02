@@ -120,6 +120,11 @@ export function useButtonStyles(props: Partial<ButtonProps> = {}) {
           },
         })
       : css({
+          ...(iconButton && {
+            width: "2.5em",
+            height: "2.5em",
+            overflow: "hidden",
+          }),
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
@@ -129,7 +134,7 @@ export function useButtonStyles(props: Partial<ButtonProps> = {}) {
           lineHeight: 1,
           outline: "none",
           margin: 0,
-          padding: iconButton ? "0.5em" : "0.25em 0.5em",
+          padding: "0.25em 0.5em",
           cursor: "pointer",
           transition: "ease all 0.5s",
           ...buttonColors,
