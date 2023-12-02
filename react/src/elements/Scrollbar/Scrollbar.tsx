@@ -36,7 +36,7 @@ export function Scrollbar(_props: ScrollbarProps) {
           ref={contentRef}
           onScroll={moveThumb}
           style={{
-            ...((showScrollbar || disableTrack )&& { marginRight: 0 }),
+            ...((showScrollbar || disableTrack) && { marginRight: 0 }),
           }}
         >
           {children}

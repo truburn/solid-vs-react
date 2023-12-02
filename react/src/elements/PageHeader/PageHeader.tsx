@@ -3,7 +3,7 @@ import uniqueId from "lodash/uniqueId";
 
 /** Top level header for site pages. Stylized H1 element */
 export function PageHeader(_props: PageHeaderProps) {
-  const { children, title, id, className, style, ...props} = _props;
+  const { children, title, id, className, style, ...props } = _props;
   const classes = usePageHeaderStyles(props);
   const elID = id ?? uniqueId("page-header-");
 

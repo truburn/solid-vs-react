@@ -6,25 +6,25 @@ const meta: Meta<typeof PageHeaderComponent> = {
   component: PageHeaderComponent,
   parameters: {
     controls: {
-      exclude: ["id", "className", "children"]
-    }
+      exclude: ["id", "className", "children"],
+    },
   },
   argTypes: {
     fontKey: {
       ...fontKey,
       defaultValue: "heading",
       table: {
-        defaultValue: { summary: "heading"}
-      }
+        defaultValue: { summary: "heading" },
+      },
     },
     colorKey: {
       ...colorKey,
       defaultValue: "secondary",
       table: {
-        defaultValue: { summary: "secondary" }
-      }
-    }
-  }
+        defaultValue: { summary: "secondary" },
+      },
+    },
+  },
 };
 
 export default meta;
@@ -33,6 +33,6 @@ type Story = StoryObj<typeof meta>;
 
 export const PageHeader: Story = {
   args: {
-    title: "Page Header Text"
-  }
+    title: "Page Header Text",
+  },
 };
