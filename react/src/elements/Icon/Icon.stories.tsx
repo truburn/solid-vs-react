@@ -31,8 +31,16 @@ type Story = StoryObj<typeof meta>;
 
 export const Icon: Story = {
   render: (args) => (
-    <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center"}}>
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <IconComponent {...args} />
     </div>
-  )
+  ),
 };
