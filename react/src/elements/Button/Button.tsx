@@ -2,6 +2,7 @@ import { ButtonProps, useButtonStyles } from "@/elements/Button";
 import { Icon } from "@/elements/Icon";
 
 /** Standardized and styled button element */
+// TODO: add tooltip
 export function Button(props: ButtonProps) {
   const { label, onClick, disabled, className, icon, iconPosition, iconButton, style } = props;
   const classes = useButtonStyles(props);

@@ -16,7 +16,8 @@ const colorKeys: ThemeColorKey[] = [
 ];
 
 const styleList = [
-  ...Object.values(ButtonStyle),
+  ButtonStyle.OUTLINE,
+  ButtonStyle.FILLED,
 ];
 
 const buttonVariations: Partial<ButtonProps>[] = [
