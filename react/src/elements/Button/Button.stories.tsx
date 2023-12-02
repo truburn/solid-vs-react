@@ -3,18 +3,28 @@ import { Button as ButtonComponent } from "./Button";
 import { ButtonVariant } from "./Button.types";
 import { ButtonStory } from "./ButtonStory";
 import { faRocketLaunch } from "@fortawesome/pro-duotone-svg-icons";
+import { colorKey, fontKey, icon } from "../../storybook/argTypes";
 
 const meta: Meta<typeof ButtonComponent> = {
   component: ButtonComponent,
   args: {
     icon: faRocketLaunch,
+    fontKey: "body",
   },
   parameters: {
     controls: {
-      include: ["label", "icon", "id", "tooltip", "fontKey"],
+      include: ["label", "icon", "id", "tooltip", "fontKey", "style"],
     },
   },
   argTypes: {
+    colorKey,
+    fontKey,
+    icon,
+    iconPosition: {
+      table: {
+        defaultValue: { summary: `If icon is defined and iconButton is not true, the default is "left"`}
+      }
+    },
     buttonStyle: {
       table: {
         defaultValue: { summary: `"outline"`}
@@ -85,5 +95,13 @@ export const CustomButton: Story = {
   args: {
     label: "Custom",
     variant: ButtonVariant.CUSTOM,
+    style: {
+      borderWidth: 2,
+      borderTopLeftRadius: 20,
+      borderBottomRightRadius: 20,
+      borderTopRightRadius: 4,
+      borderBottomLeftRadius: 4,
+      padding: "0.25rem 1rem",
+    }
   }
 }

@@ -22,7 +22,6 @@ export const colorKey = {
 export const fontKey = {
   control: {
     type: "select",
-    value: "default",
   },
   options: ["default", "body", "heading"],
   table: {
@@ -33,7 +32,6 @@ export const fontKey = {
 export const icon = {
   control: {
     type: "select",
-    value: "Rocket",
   },
   options: ["Rocket", "Paw", "Food", "Cookie"],
   mapping: {

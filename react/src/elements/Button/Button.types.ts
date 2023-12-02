@@ -36,6 +36,10 @@ export interface ButtonProps extends Omit<MCElement, "children"> {
   buttonStyle?: ButtonStyle;
   /** Display only the icon as a button. */
   iconButton?: boolean;
+  /** Styles to apply only to the icon */
+  iconClassName?: string;
+  /** Styles to apply only to the label */
+  labelClassName?: string;
 }
 
 export enum ButtonStyle {

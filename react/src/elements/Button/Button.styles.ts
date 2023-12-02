@@ -1,4 +1,4 @@
-import { css, useTheme } from "@emotion/react";
+import { css, useTheme, CSSObject } from "@emotion/react";
 import { ButtonProps, ButtonStyle, ButtonVariant } from "@/elements/Button";
 import { ThemeColor } from "@/theme";
 import { useMemo } from "react";
@@ -9,11 +9,15 @@ export function useButtonStyles(props: Partial<ButtonProps> = {}) {
     colorKey = "standard",
     variant = ButtonVariant.STANDARD,
     buttonStyle = ButtonStyle.OUTLINE,
+    iconPosition,
+    iconButton,
+    icon: iconEl,
+    fontKey = "body",
   } = props;
   const colorGroup: ThemeColor = theme.colors[colorKey];
 
-  const borderFill = useMemo(() => {
-    const tmpData = {
+  const buttonColors = useMemo<CSSObject>(() => {
+    const tmpData: CSSObject = {
       background: "transparent",
       color: colorGroup.main,
       borderColor: "transparent",
@@ -24,7 +28,7 @@ export function useButtonStyles(props: Partial<ButtonProps> = {}) {
       },
     };
 
-    if (buttonStyle?.includes("outline")) {
+    if (buttonStyle === ButtonStyle.OUTLINE) {
       tmpData.background = colorGroup.altContrast;
       tmpData.color = colorGroup.altMain;
       tmpData.borderColor = "currentcolor";
@@ -35,7 +39,7 @@ export function useButtonStyles(props: Partial<ButtonProps> = {}) {
       };
     }
 
-    if (buttonStyle?.includes("filled")) {
+    if (buttonStyle === ButtonStyle.FILLED) {
       tmpData.background = colorGroup.main;
       tmpData.color = colorGroup.contrast;
       tmpData.borderColor = colorGroup.main;
@@ -47,28 +51,89 @@ export function useButtonStyles(props: Partial<ButtonProps> = {}) {
     }
 
     return tmpData;
+  }, [buttonStyle]);
+
+  const buttonBorders = useMemo<CSSObject>(() => {
+    const tmpData: CSSObject = {
+      borderStyle: "solid",
+      borderWidth: 0,
+      borderRadius: 0,
+    };
+
+    switch (variant) {
+      case ButtonVariant.STANDARD:
+        tmpData.borderWidth = 3;
+        Object.entries(theme.border.drawn).forEach(([key, value]) => {
+          tmpData[key] = value;
+        });
+        break;
+
+      case ButtonVariant.SQUARE:
+        tmpData.borderWidth = theme.border.width;
+        tmpData.borderRadius = theme.border.radius;
+        break;
+
+      case ButtonVariant.ROUND:
+        tmpData.borderWidth = theme.border.width;
+        tmpData.borderRadius = "1.5em";
+        break;
+
+      case ButtonVariant.TEXT:
+        tmpData.background = "transparent";
+        break;
+    }
+
+    return tmpData;
   }, [variant]);
+
+  const iconPadding = useMemo<CSSObject>(() => {
+    const thinSpacing = "0.125em";
+    const medSpacing = "0.5em";
+
+    const tmpData: CSSObject = {
+      paddingTop: 0,
+      paddingBottom: 0,
+      paddingLeft: thinSpacing,
+      paddingRight: thinSpacing,
+    };
+
+    if (iconButton) {
+      tmpData.paddingTop = thinSpacing;
+      tmpData.paddingBottom = thinSpacing;
+    } else if (iconPosition === "right") {
+      tmpData.paddingLeft = medSpacing;
+    } else if (iconEl) {
+      tmpData.paddingRight = medSpacing;
+    }
+
+    return tmpData;
+  }, [iconPosition, iconButton, iconEl]);
 
   const root =
     variant === ButtonVariant.CUSTOM
-      ? css({})
+      ? css({
+          ...buttonColors,
+          fontFamily: theme.fonts[fontKey].name,
+          "&:disabled": {
+            opacity: 0.25,
+            cursor: "not-allowed",
+          },
+        })
       : css({
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "center",
-          fontFamily: theme.fonts.body.name,
+          fontFamily: theme.fonts[fontKey].name,
           fontSize: "1rem",
           lineHeight: 1,
-          borderStyle: "solid",
-          borderWidth: 3,
-          ...theme.border.drawn,
           outline: "none",
           margin: 0,
-          padding: `${theme.spacing.small}px ${theme.spacing.medium}px`,
+          padding: iconButton ? "0.5em" : "0.25em 0.5em",
           cursor: "pointer",
           transition: "ease all 0.5s",
-          ...borderFill,
+          ...buttonColors,
+          ...buttonBorders,
           "&:disabled": {
             opacity: 0.25,
             cursor: "not-allowed",
@@ -80,8 +145,8 @@ export function useButtonStyles(props: Partial<ButtonProps> = {}) {
   });
 
   const icon = css({
-    padding: `0 ${theme.spacing.thin}px`,
     fontSize: "1.5em",
+    ...iconPadding,
   });
 
   return { root, label, icon };
