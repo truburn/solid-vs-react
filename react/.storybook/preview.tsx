@@ -18,7 +18,7 @@ const preview: Preview = {
         date: /Date$/i,
       },
       sort: "requiredFirst",
-      exclude: ["onClick", "className"],
+      exclude: ["onClick", "className", "id"],
     },
     options: {
       storySort: {
