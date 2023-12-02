@@ -2,13 +2,13 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Icon as IconComponent } from "./Icon";
 import { faRocketLaunch } from "@fortawesome/pro-duotone-svg-icons";
 import { icon } from "../../storybook/argTypes";
-import { theme } from "../../theme"
+import { theme } from "../../theme";
 
 const meta: Meta<typeof IconComponent> = {
   component: IconComponent,
   parameters: {
     controls: {
-      exclude: ["className"]
+      exclude: ["className"],
     },
     layout: "centered",
   },
@@ -18,11 +18,11 @@ const meta: Meta<typeof IconComponent> = {
       width: "2rem",
       height: "2rem",
       color: theme.colors.primary.main,
-    }
+    },
   },
   argTypes: {
     icon,
-  }
+  },
 };
 
 export default meta;

@@ -2,9 +2,9 @@ import { IconProps, useIconStyles } from "@/elements/Icon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import uniqueId from "lodash/uniqueId";
 
-/** 
+/**
  * Component for rendering Font Awesome icon. Extends properties available
- * in the [FontAwesomeIcon](https://fontawesome.com/docs/web/use-with/react/style) 
+ * in the [FontAwesomeIcon](https://fontawesome.com/docs/web/use-with/react/style)
  * component. Icon definition to display is imported from respective
  * font awesome style package.
  */

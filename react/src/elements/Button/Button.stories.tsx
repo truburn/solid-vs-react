@@ -22,36 +22,38 @@ const meta: Meta<typeof ButtonComponent> = {
     icon,
     iconPosition: {
       table: {
-        defaultValue: { summary: `If icon is defined and iconButton is not true, the default is "left"`}
-      }
+        defaultValue: {
+          summary: `If icon is defined and iconButton is not true, the default is "left"`,
+        },
+      },
     },
     buttonStyle: {
       table: {
-        defaultValue: { summary: `"outline"`}
-      }
+        defaultValue: { summary: `"outline"` },
+      },
     },
     disabled: {
       table: {
-        defaultValue: { summary: false }
-      }
+        defaultValue: { summary: false },
+      },
     },
     submit: {
       table: {
-        defaultValue: { summary: false }
-      }
+        defaultValue: { summary: false },
+      },
     },
     tooltip: {
       control: "text",
       table: {
-        defaultValue: { summary: "label value" }
-      }
+        defaultValue: { summary: "label value" },
+      },
     },
     variant: {
       table: {
-        defaultValue: { summary: `"standard"` }
-      }
-    }
-  }
+        defaultValue: { summary: `"standard"` },
+      },
+    },
+  },
 };
 
 export default meta;
@@ -87,7 +89,7 @@ export const TextButton: Story = {
   args: {
     label: "Text",
     variant: ButtonVariant.TEXT,
-  }
+  },
 };
 
 export const CustomButton: Story = {
@@ -102,6 +104,6 @@ export const CustomButton: Story = {
       borderTopRightRadius: 4,
       borderBottomLeftRadius: 4,
       padding: "0.25rem 1rem",
-    }
-  }
-}
+    },
+  },
+};
