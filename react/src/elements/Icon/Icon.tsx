@@ -7,6 +7,8 @@ import uniqueId from "lodash/uniqueId";
  * in the [FontAwesomeIcon](https://fontawesome.com/docs/web/use-with/react/style)
  * component. Icon definition to display is imported from respective
  * font awesome style package.
+ * 
+ * To browse the over 30k icons available, visit [FontAwesome](https://fontawesome.com/icons)
  */
 export function Icon(_props: IconProps) {
   const { id, ...props } = _props;
