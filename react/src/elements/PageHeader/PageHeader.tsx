@@ -2,9 +2,9 @@ import { PageHeaderProps, usePageHeaderStyles } from "@/elements/PageHeader";
 import uniqueId from "lodash/uniqueId";
 
 /** Top level header for site pages. Stylized H1 element */
-export function PageHeader(_props: PageHeaderProps) {
-  const { children, title, id, className, style, ...props } = _props;
-  const classes = usePageHeaderStyles(props);
+export function PageHeader(props: PageHeaderProps) {
+  const { children, title, id, className, style } = props;
+  const classes = usePageHeaderStyles();
   const elID = id ?? uniqueId("page-header-");
 
   return (

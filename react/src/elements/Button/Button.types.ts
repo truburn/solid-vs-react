@@ -1,8 +1,7 @@
-import { MCElement } from "@/vite-env";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { MouseEventHandler } from "react";
 
-export interface ButtonProps extends Omit<MCElement, "children"> {
+export interface ButtonProps extends MCElement, MCStyleKeys {
   /**
    * Text label to display inside the button. If the variant is an
    * icon style, the label is used as the tooltip unless a tooltip

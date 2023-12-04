@@ -1,7 +1,4 @@
-import { MCElement } from "@/vite-env";
-
-export interface SectionHeaderProps
-  extends Omit<MCElement, "colorKey" | "fontKey"> {
+export interface SectionHeaderProps extends MCElement {
   /**
    * Text string to display in the header. If `children` is defined, they
    * will override the title.

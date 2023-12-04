@@ -1,4 +1,8 @@
+import { useAppStyles } from "@/layout/App";
+
 /** Application level provider element for the app context */
 export function AppProvider() {
-  return <div>App Provider Element</div>;
+  const classes = useAppStyles();
+
+  return <div css={classes.root}>App Provider Element</div>;
 }

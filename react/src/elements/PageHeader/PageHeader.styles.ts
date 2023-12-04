@@ -1,17 +1,15 @@
 import { css, useTheme } from "@emotion/react";
-import { PageHeaderProps } from "@/elements/PageHeader";
 
-export function usePageHeaderStyles(props: Partial<PageHeaderProps>) {
-  const { colorKey = "secondary", fontKey = "heading" } = props;
+export function usePageHeaderStyles() {
   const theme = useTheme();
-  const colorGroup = theme.colors[colorKey];
+  const colorGroup = theme.colors.secondary;
 
   const root = css({
     width: "fit-content",
     maxWidth: "65%",
     margin: "1rem auto",
     padding: "0.75rem 2.25rem",
-    fontFamily: theme.fonts[fontKey].name,
+    fontFamily: theme.fonts.heading.name,
     fontSize: "1.5rem",
     background: colorGroup.altContrast,
     color: colorGroup.altMain,

@@ -1,7 +1,6 @@
 import { ThemeColorKey } from "@/theme";
-import { MCElement } from "@/vite-env";
 
-export interface ScrollbarProps extends Omit<MCElement, "fontKey"> {
+export interface ScrollbarProps extends MCElement {
   /** Color group to apply to the scrollbar track and thumb */
   colorKey?: ThemeColorKey;
   /**
