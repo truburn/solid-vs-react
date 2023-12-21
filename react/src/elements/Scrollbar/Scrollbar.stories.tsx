@@ -12,7 +12,7 @@ const meta: Meta<typeof ScrollbarComponent> = {
     controls: {
       exclude: ["children", "id", "className"],
     },
-    layout: "centered",
+    layout: "fullscreen",
   },
   args: {
     showBorder: false,
@@ -104,6 +104,7 @@ function ScrollbarStory(props: ScrollbarProps) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        flexDirection: "column",
       }}
     >
       <ScrollbarComponent {...props} />
