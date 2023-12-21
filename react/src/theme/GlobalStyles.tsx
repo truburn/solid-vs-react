@@ -48,6 +48,9 @@ export function GlobalStyles() {
             maxWidth: "100%",
             maxHeight: "100%",
             overflow: "hidden",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "stretch",
           },
           p: {
             fontFamily: theme.fonts.body.name,

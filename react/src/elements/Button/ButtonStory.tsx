@@ -53,7 +53,7 @@ export function ButtonStory(_props: ButtonProps) {
   } = _props;
 
   return (
-    <div css={css({ overflow: "auto", height: "100%" })}>
+    <div css={css({ overflow: "auto", flex: 1 })}>
       {styleList
         .filter((buttonStyle) => {
           if (variant === ButtonVariant.TEXT) {
