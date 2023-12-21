@@ -7,6 +7,8 @@ export function PageHeader(props: PageHeaderProps) {
   const classes = usePageHeaderStyles();
   const elID = id ?? uniqueId("page-header-");
 
+  if (!title && !children) return null;
+
   return (
     <h1 id={elID} css={classes.root} className={className} style={style}>
       {children ?? title}
