@@ -1,8 +1,6 @@
-import { useAppStyles } from "@/layout/App";
+import { ReactNode } from "react";
+import { AppContext } from "@/layout/App";
 
-/** Application level provider element for the app context */
-export function AppProvider() {
-  const classes = useAppStyles();
-
-  return <div css={classes.root}>App Provider Element</div>;
+export function AppProvider(props: { children: ReactNode}) {
+  return <AppContext.Provider value={{}}>{props.children}</AppContext.Provider>
 }

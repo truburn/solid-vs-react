@@ -1,2 +1,2 @@
-export * from "./App.styles";
+export * from "./AppContext";
 export * from "./AppProvider";
