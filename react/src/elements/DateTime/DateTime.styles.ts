@@ -1,9 +1,9 @@
-import { css, useTheme } from "@emotion/react";
+import { css } from "@emotion/react";
 
 export function useDateTimeStyles() {
-  const theme = useTheme();
-
-  const root = css({});
+  const root = css({
+    margin: "0 1ch",
+  });
 
   return { root };
 }

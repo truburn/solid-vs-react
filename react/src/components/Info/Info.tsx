@@ -3,6 +3,7 @@ import { SectionHeader } from "@/elements/SectionHeader";
 import { MealList } from "@/components/MealList";
 import uniqueId from "lodash/uniqueId";
 import { useAppContext } from "@/layout/App";
+import { DateTime } from "@/elements/DateTime";
 
 /** Display a block with the recipe's additional information */
 export function Info(props: InfoProps) {
@@ -22,7 +23,7 @@ export function Info(props: InfoProps) {
       </p>
       <p css={classes.info}>
         <span css={classes.label}>Created</span>
-        {created?.toDateString()}
+        <DateTime date={created} />
       </p>
       {cuisine && (
         <p css={classes.info}>

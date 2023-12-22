@@ -6,7 +6,7 @@ const recipes: Recipe[] = [
     summary: "A crispy, toasted sandwich with yummy, ooey-gooey cheese!",
     meal: ["lunch", "dinner", "snack"],
     cuisine: "American",
-    created: new Date("2020-09-09T01:30:00.000Z"),
+    created: "2020-09-09T06:30:00.000Z",
   },
   {
     recipeID: "recipe002",
@@ -16,7 +16,7 @@ const recipes: Recipe[] = [
       "A soft and comforting sandwich filled with creamy peanut butter and sweet grape jelly.",
     meal: ["lunch", "dinner", "snack"],
     cuisine: "American",
-    created: new Date("1986-07-21T16:20:00.000Z"),
+    created: "1986-07-21T16:20:00.000Z",
   },
   {
     recipeID: "recipe003",
@@ -24,7 +24,7 @@ const recipes: Recipe[] = [
     author: "Mommy Seburn",
     summary: "Fluffy and filling scrabled eggs.",
     meal: [],
-    created: new Date("1982-01-05T09:50:00.000Z"),
+    created: "1982-01-05T09:50:00.000Z",
   },
 ];
 

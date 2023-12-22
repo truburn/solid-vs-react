@@ -83,8 +83,8 @@ declare global {
     steps?: Step[];
     revisions?: Revision[];
     author?: string;
-    created?: Date;
-    updated?: Date;
+    created?: string;
+    updated?: string;
     servings?: Servings;
   }
 
