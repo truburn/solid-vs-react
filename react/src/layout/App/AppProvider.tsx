@@ -1,6 +1,11 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { AppContext } from "@/layout/App";
 
 export function AppProvider(props: { children: ReactNode }) {
-  return <AppContext.Provider value={{}}>{props.children}</AppContext.Provider>;
+  const [recipe, setRecipe] = useState<Recipe | undefined>(undefined);
+  return (
+    <AppContext.Provider value={{ recipe, selectRecipe: setRecipe }}>
+      {props.children}
+    </AppContext.Provider>
+  );
 }
