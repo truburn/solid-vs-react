@@ -1,30 +1,25 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { DateTime } from "luxon";
 
 export function useRedirectToHome(seconds: number) {
   const navigate = useNavigate();
   const [timeLeft, setTimeLeft] = useState<number>(seconds);
 
-  const target = useMemo<number>(() => {
-    const current = new Date();
-    const currentParsed = Date.parse(current.toString());
-    const millisecs = seconds * 1000;
-    return currentParsed + millisecs;
-  }, [seconds]);
-
   useEffect(() => {
+    const target = DateTime.now().plus({ seconds });
     const interval = setInterval(() => {
-      const current = new Date();
-      const currentParsed = Date.parse(current.toString());
-      const secsLeft = Math.round((target - currentParsed) / 1000);
+      const current = DateTime.now();
+      const diffInSecs = target.diff(current, "seconds");
+      const remaining = Math.round(diffInSecs.seconds);
 
-      if (secsLeft === 0) navigate("/");
+      if (remaining < 0) navigate("/");
 
-      setTimeLeft(secsLeft);
+      setTimeLeft(remaining);
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [target]);
+  }, [seconds]);
 
   return timeLeft;
 }
