@@ -1,7 +1,7 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
 import { Page } from "@/layout/Page";
 import { AddEdit } from "@/pages/AddEdit";
-import { Error } from "@/pages/Error";
+import { ErrorPage } from "@/pages/ErrorPage";
 import { Home } from "@/pages/Home";
 import { PageNotFound } from "@/pages/PageNotFound";
 import { Recipe } from "@/pages/Recipe";
@@ -9,7 +9,7 @@ import { Recipe } from "@/pages/Recipe";
 export const router = createBrowserRouter([
   {
     element: <Page />,
-    errorElement: <Error />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
