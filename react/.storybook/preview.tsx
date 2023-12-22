@@ -7,6 +7,7 @@ import results from "../.jest-test-results.json";
 import { Title, Description, Subtitle } from "@storybook/blocks";
 import React from "react";
 import { ImportStatement, PropsTable } from "./blocks";
+import { withAppContext } from "../src/storybook/withAppContext";
 
 const preview: Preview = {
   parameters: {
@@ -48,6 +49,7 @@ const preview: Preview = {
       GlobalStyles,
     }),
     withTests({ results }),
+    withAppContext,
   ],
   argTypes: {
     id: {
