@@ -2,6 +2,7 @@ import { MealListProps, useMealListStyles } from "@/components/MealList";
 import { useAppContext } from "@/layout/App";
 import startCase from "lodash/startCase";
 import uniqueId from "lodash/uniqueId";
+import { useMemo } from "react";
 
 /** List of meals or courses the recipe is recommended for as tokens */
 export function MealList(_props: MealListProps) {
@@ -9,12 +10,16 @@ export function MealList(_props: MealListProps) {
   const { recipe } = useAppContext();
   const classes = useMealListStyles(props);
 
-  if (!recipe?.meal) return null;
+  const list = useMemo<string[]>(() => {
+    if (recipe?.meal && recipe.meal.length > 0)
+      return recipe.meal.map((m) => startCase(m));
+    return ["Any"];
+  }, [recipe]);
 
   return (
     <ul css={classes.root} className={className} style={style} id={id}>
-      {recipe.meal.map((m) => (
-        <li key={m}>{startCase(m)}</li>
+      {list.map((m) => (
+        <li key={m}>{m}</li>
       ))}
     </ul>
   );
