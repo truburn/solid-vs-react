@@ -5,6 +5,7 @@ import { ErrorPage } from "@/pages/ErrorPage";
 import { Home } from "@/pages/Home";
 import { PageNotFound } from "@/pages/PageNotFound";
 import { Recipe } from "@/pages/Recipe";
+import recipeList, { getRecipe } from "@/storybook/RecipeSamples";
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +18,9 @@ export const router = createBrowserRouter([
           {
             index: true,
             element: <Home />,
+            loader: async () => {
+              return recipeList as Recipe[];
+            },
           },
           {
             path: "recipe",
@@ -39,12 +43,19 @@ export const router = createBrowserRouter([
                   {
                     path: ":recipeID",
                     element: <AddEdit />,
+                    loader: async ({ params }) => {
+                      return fetchRecipe(params.recipeID);
+                    },
                   },
                 ],
               },
               {
                 path: ":recipeID",
                 element: <Recipe />,
+                loader: async ({ params }) => {
+                  const recipe = fetchRecipe(params.recipeID);
+                  return { recipe, recipeList };
+                },
               },
             ],
           },
@@ -57,3 +68,10 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
+
+function fetchRecipe(recipeID?: string) {
+  if (!recipeID) return redirect("/");
+  const recipe = getRecipe(recipeID);
+  if (!recipe) return redirect("/");
+  return recipe;
+}

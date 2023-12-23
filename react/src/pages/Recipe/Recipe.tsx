@@ -6,23 +6,28 @@ import { SectionHeader } from "@/elements/SectionHeader";
 import { useAppContext } from "@/layout/App";
 import { Content } from "@/layout/Content";
 import { useRecipeStyles } from "@/pages/Recipe";
-import { getRecipe } from "@/storybook/RecipeSamples";
 import { DateTime } from "@/elements/DateTime";
 import { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 /** Component to render the recipe page */
 export function Recipe() {
-  const { recipe, selectRecipe } = useAppContext();
+  const { list, selectRecipe, setRecipeList } = useAppContext();
   const classes = useRecipeStyles();
-  const { recipeID } = useParams();
-  const navigate = useNavigate();
+  const { recipe, recipeList }: any = useLoaderData();
 
   useEffect(() => {
-    const tmpRecipe = getRecipe(recipeID);
-    if (tmpRecipe) selectRecipe(tmpRecipe);
-    else navigate("/");
-  }, [recipeID]);
+    selectRecipe(recipe);
+    return () => {
+      selectRecipe({});
+    };
+  }, [recipe]);
+
+  useEffect(() => {
+    if (list?.length !== recipeList.length) {
+      setRecipeList(recipeList);
+    }
+  }, [recipeList]);
 
   return (
     <div css={classes.root}>

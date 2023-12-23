@@ -1,8 +1,10 @@
-import { createContext, useContext } from "react";
+import { Dispatch, SetStateAction, createContext, useContext } from "react";
 
 export interface AppContextProps {
   recipe?: Recipe;
-  selectRecipe: React.Dispatch<React.SetStateAction<any>>;
+  selectRecipe: Dispatch<SetStateAction<any>>;
+  list?: Recipe[];
+  setRecipeList: Dispatch<SetStateAction<any>>;
 }
 
 export const AppContext = createContext<AppContextProps | null>(null);

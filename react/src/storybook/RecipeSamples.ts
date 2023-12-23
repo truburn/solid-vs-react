@@ -26,6 +26,15 @@ const recipes: Recipe[] = [
     meal: [],
     created: "1982-01-05T09:50:00.000Z",
   },
+  {
+    recipeID: "recipe004",
+    name: "Pancakes",
+    author: "Daddy Seburn",
+    summary:
+      "Little circles of happiness! Even better with warm and sticky syrup drizzled on top.",
+    meal: ["breakfast"],
+    created: "2023-12-23T07:31:00.000Z",
+  },
 ];
 
 export function getRecipe(recipeID?: string) {
@@ -33,3 +42,5 @@ export function getRecipe(recipeID?: string) {
 
   return recipes.find((recipe) => recipe.recipeID === recipeID);
 }
+
+export default recipes;
