@@ -39,20 +39,20 @@ export function Recipe() {
       <div css={classes.sidePanel}>
         <SectionHeader title="Little Details" />
         <p css={classes.summary}>{recipe?.summary}</p>
-        <SectionHeader title="Author" depth={3} />
-        <p css={classes.info}>{recipe?.author}</p>
-        <SectionHeader title="Created" depth={3} />
-        <p css={classes.info}>
-          <DateTime date={recipe?.created} />
-        </p>
+        <SectionHeader title="Suggested Meal(s)" depth={3} />
+        <MealList css={classes.info} />
         {recipe?.cuisine && (
           <>
             <SectionHeader title="Cuisine" depth={3} />
             <p css={classes.info}>{recipe.cuisine}</p>
           </>
         )}
-        <SectionHeader title="Suggested Meal(s)" depth={3} />
-        <MealList css={classes.info} />
+        <SectionHeader title="Author" depth={3} />
+        <p css={classes.info}>{recipe?.author}</p>
+        <SectionHeader title="Created" depth={3} />
+        <p css={classes.info}>
+          <DateTime date={recipe?.created} />
+        </p>
       </div>
     </div>
   );
