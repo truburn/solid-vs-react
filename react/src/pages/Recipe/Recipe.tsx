@@ -9,18 +9,19 @@ import { useRecipeStyles } from "@/pages/Recipe";
 import { getRecipe } from "@/storybook/RecipeSamples";
 import { DateTime } from "@/elements/DateTime";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 /** Component to render the recipe page */
 export function Recipe() {
   const { recipe, selectRecipe } = useAppContext();
   const classes = useRecipeStyles();
   const { recipeID } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const tmpRecipe = getRecipe(recipeID);
     if (tmpRecipe) selectRecipe(tmpRecipe);
-    else selectRecipe({ name: "My Awesome Recipe" });
+    else navigate("/");
   }, [recipeID]);
 
   return (
