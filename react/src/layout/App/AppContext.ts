@@ -2,7 +2,7 @@ import { createContext, useContext } from "react";
 
 export interface AppContextProps {
   recipe?: Recipe;
-  selectRecipe?: React.Dispatch<React.SetStateAction<any>>;
+  selectRecipe: React.Dispatch<React.SetStateAction<any>>;
 }
 
 export const AppContext = createContext<AppContextProps | null>(null);
