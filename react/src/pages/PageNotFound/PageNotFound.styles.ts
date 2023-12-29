@@ -1,3 +1,4 @@
+import { Mixins } from "@/utils";
 import { css, useTheme } from "@emotion/react";
 
 export function usePageNotFoundStyles() {
@@ -12,7 +13,7 @@ export function usePageNotFoundStyles() {
   });
 
   const title = css({
-    margin: 0,
+    ...Mixins.spacing("margin", 0),
     color: theme.colors.secondary.main,
     fontFamily: theme.fonts.heading.name,
     textAlign: "center",
@@ -21,7 +22,7 @@ export function usePageNotFoundStyles() {
   const icon = css({
     color: theme.colors.primary.main,
     fontSize: "20rem",
-    margin: theme.spacing.wide,
+    ...Mixins.spacing("margin", theme.spacing.wide),
   });
 
   const redirect = css({
@@ -29,7 +30,7 @@ export function usePageNotFoundStyles() {
     fontSize: "1.25rem",
     "& a": {
       display: "block",
-      margin: theme.spacing.large,
+      ...Mixins.spacing("margin", theme.spacing.large),
       fontSize: "1rem",
     },
   });

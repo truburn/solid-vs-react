@@ -1,3 +1,4 @@
+import { Mixins } from "@/utils";
 import { css, useTheme } from "@emotion/react";
 
 export function useRecipeStyles() {
@@ -24,9 +25,8 @@ export function useRecipeStyles() {
     width: 0,
     borderStyle: "solid",
     borderColor: theme.colors.primary.altContrast,
-    borderWidth: 0,
-    borderRightWidth: theme.border.width,
-    margin: theme.spacing.small,
+    ...Mixins.borderWidths({ right: theme.border.width }),
+    ...Mixins.spacing("margin", theme.spacing.small),
   });
 
   const sidePanel = css({
@@ -34,18 +34,19 @@ export function useRecipeStyles() {
     display: "flex",
     flexDirection: "column",
     overflow: "hidden",
-    marginTop: theme.spacing.large,
-    marginBottom: theme.spacing.large,
+    ...Mixins.spacing("margin", { vertical: theme.spacing.large }),
   });
 
   const info = css({
-    margin: theme.spacing.large,
-    marginTop: theme.spacing.thin,
-    paddingLeft: theme.spacing.large,
+    ...Mixins.spacing("margin", {
+      all: theme.spacing.large,
+      top: theme.spacing.thin,
+    }),
+    ...Mixins.spacing("padding", { left: theme.spacing.large }),
   });
 
   const summary = css({
-    margin: theme.spacing.large,
+    ...Mixins.spacing("margin", theme.spacing.large),
   });
 
   return { root, content, divider, sidePanel, info, summary };

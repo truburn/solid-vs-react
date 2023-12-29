@@ -1,3 +1,4 @@
+import { Mixins } from "@/utils";
 import { Global, css } from "@emotion/react";
 
 export function GlobalStyles() {
@@ -9,15 +10,15 @@ export function GlobalStyles() {
         `,
         (theme) => ({
           html: {
-            margin: 0,
-            padding: 0,
+            ...Mixins.spacing("margin", 0),
+            ...Mixins.spacing("padding", 0),
             width: "100vw",
             height: "100vh",
             overflow: "hidden",
           },
           body: {
-            margin: 0,
-            padding: 0,
+            ...Mixins.spacing("margin", 0),
+            ...Mixins.spacing("padding", 0),
             width: "100vw",
             height: "100vh",
             overflow: "hidden",
@@ -27,8 +28,8 @@ export function GlobalStyles() {
             fontFamily: theme.fonts.default.name,
           },
           "#root": {
-            margin: 0,
-            padding: 0,
+            ...Mixins.spacing("margin", 0),
+            ...Mixins.spacing("padding", 0),
             width: "100vw",
             height: "100vh",
             overflow: "hidden",
@@ -54,8 +55,7 @@ export function GlobalStyles() {
           },
           p: {
             fontFamily: theme.fonts.body.name,
-            margin: 0,
-            marginBottom: theme.spacing.large,
+            ...Mixins.spacing("margin", { bottom: theme.spacing.large }),
           },
           a: {
             fontFamily: "inherit",
@@ -67,10 +67,10 @@ export function GlobalStyles() {
           },
           "input, textarea": {
             borderStyle: "solid",
-            borderWidth: theme.border.width,
+            ...Mixins.borderWidths(theme.border.width),
             borderColor: theme.border.color,
             borderRadius: theme.border.radius,
-            padding: theme.spacing.medium,
+            ...Mixins.spacing("padding", theme.spacing.medium),
             fontFamily: theme.fonts.body.name,
             fontSize: theme.baseSize,
             background: theme.colors.standard.contrast,
@@ -82,8 +82,10 @@ export function GlobalStyles() {
             gridTemplateColumns: "1.125em auto",
             gap: "0.5em",
             cursor: "pointer",
-            margin: `${theme.spacing.small}px 0`,
-            marginRight: theme.spacing.small,
+            ...Mixins.spacing("margin", {
+              vertical: theme.spacing.small,
+              right: theme.spacing.small,
+            }),
             color: theme.colors.standard.main,
             "&:hover": {
               fontWeight: "bold",
@@ -99,13 +101,13 @@ export function GlobalStyles() {
               display: "grid",
               placeContent: "flex-end center",
               appearance: "none",
-              margin: "0.125em",
-              padding: 0,
+              ...Mixins.spacing("margin", "0.125em"),
+              ...Mixins.spacing("padding", 0),
               background: theme.colors.standard.contrast,
               color: "currentcolor",
               borderStyle: "solid",
               borderColor: "currentcolor",
-              borderWidth: theme.border.width,
+              ...Mixins.borderWidths(theme.border.width),
               borderRadius: theme.border.radius,
               width: "1.15em",
               height: "1.15em",

@@ -5,6 +5,7 @@ import {
 } from "@/elements/Scrollbar";
 import { colorKey } from "@/storybook/argTypes";
 import { getDummySummary } from "@/dummyData";
+import { Mixins } from "@/utils";
 
 const meta: Meta<typeof ScrollbarComponent> = {
   component: ScrollbarComponent,
@@ -44,7 +45,7 @@ export const Scrollbar: Story = {
       .fill(0)
       .map((_, idx) => {
         return (
-          <p key={idx} style={{ margin: 16 }}>
+          <p key={idx} style={{ ...Mixins.spacing("margin", 16) }}>
             {getDummySummary(Math.ceil(Math.random() * 10))}
           </p>
         );
@@ -65,7 +66,7 @@ export const ScrollbarBorder: Story = {
       .fill(0)
       .map((_, idx) => {
         return (
-          <p key={idx} style={{ margin: 16 }}>
+          <p key={idx} style={{ ...Mixins.spacing("margin", 16) }}>
             {getDummySummary(Math.ceil(Math.random() * 10))}
           </p>
         );
@@ -83,7 +84,7 @@ export const AlwaysShow: Story = {
   args: {
     showScrollbar: true,
     children: (
-      <p style={{ margin: 16 }}>
+      <p style={{ ...Mixins.spacing("margin", 16) }}>
         {getDummySummary(Math.ceil(Math.random() * 10))}
       </p>
     ),

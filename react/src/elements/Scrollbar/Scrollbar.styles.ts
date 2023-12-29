@@ -1,5 +1,6 @@
 import { css, useTheme } from "@emotion/react";
 import { ScrollbarProps } from "@/elements/Scrollbar";
+import { Mixins } from "@/utils";
 
 export function useScrollbarStyles(props: Partial<ScrollbarProps>) {
   const { showBorder, colorKey = "standard" } = props;
@@ -16,7 +17,7 @@ export function useScrollbarStyles(props: Partial<ScrollbarProps>) {
     justifyContent: "space-between",
     ...(showBorder && {
       borderStyle: "solid",
-      borderWidth: theme.border.width,
+      ...Mixins.borderWidths(theme.border.width),
       borderRadius: theme.border.radius,
       borderColor: colorGroup.altContrast,
     }),
@@ -33,14 +34,13 @@ export function useScrollbarStyles(props: Partial<ScrollbarProps>) {
   const content = css({
     flex: 1,
     overflow: "auto",
-    marginRight: -18,
+    ...Mixins.spacing("margin", { right: -18 }),
   });
 
   const track = css({
     ...theme.scrollbar,
     border: "solid 1px",
-    margin: 5,
-    marginLeft: 0,
+    ...Mixins.spacing("margin", { all: 5, left: 0 }),
     background: colorGroup.contrast,
     borderColor: colorGroup.altContrast,
     overflow: "hidden",

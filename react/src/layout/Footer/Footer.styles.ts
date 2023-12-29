@@ -1,3 +1,4 @@
+import { Mixins } from "@/utils";
 import { css, useTheme } from "@emotion/react";
 
 export function useFooterStyles() {
@@ -11,14 +12,17 @@ export function useFooterStyles() {
     background: theme.colors.standard.altContrast,
     color: theme.colors.standard.main,
     fontSize: "0.875rem",
-    padding: `${theme.spacing.medium}px ${theme.spacing.large}px`,
+    ...Mixins.spacing("padding", {
+      vertical: theme.spacing.medium,
+      horizontal: theme.spacing.large,
+    }),
     "& p": {
-      margin: 0,
+      ...Mixins.spacing("margin", 0),
     },
   });
 
   const icon = css({
-    marginRight: theme.spacing.small,
+    ...Mixins.spacing("margin", { right: theme.spacing.small }),
   });
 
   return { root, icon };

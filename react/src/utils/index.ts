@@ -1,1 +1,1 @@
-export * from "./color.utils";
+export * as Mixins from "./mixins";

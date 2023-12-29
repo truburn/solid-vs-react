@@ -1,5 +1,6 @@
 import { css, useTheme } from "@emotion/react";
 import { MealListProps } from "@/components/MealList";
+import { Mixins } from "@/utils";
 
 export function useMealListStyles(props: Partial<MealListProps>) {
   const theme = useTheme();
@@ -13,14 +14,14 @@ export function useMealListStyles(props: Partial<MealListProps>) {
     flexWrap: "wrap",
     alignItems: "stretch",
     justifyContent,
-    margin: 0,
-    padding: 0,
+    ...Mixins.spacing("margin", { all: 0 }),
+    ...Mixins.spacing("padding", { all: 0 }),
     listStyle: "none",
     "& li": {
       display: "flex",
       alignItems: "center",
-      margin: "0.25rem",
-      padding: "0 0.5rem",
+      ...Mixins.spacing("margin", { all: "0.25rem" }),
+      ...Mixins.spacing("padding", { horizontal: "0.25rem" }),
       fontSize: "0.75rem",
       fontWeight: theme.fonts.default.weight?.light,
       background: colorGroup.altContrast,

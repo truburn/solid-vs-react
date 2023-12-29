@@ -1,3 +1,4 @@
+import { Mixins } from "@/utils";
 import { css, useTheme } from "@emotion/react";
 
 export function useContentStyles() {
@@ -9,10 +10,10 @@ export function useContentStyles() {
     display: "flex",
     flexDirection: "column",
     overflow: "hidden",
-    margin: `${theme.spacing.large}px 0`,
+    ...Mixins.spacing("margin", { vertical: theme.spacing.large }),
     background: theme.colors.panel.background,
     borderStyle: "solid",
-    borderWidth: theme.border.width,
+    ...Mixins.borderWidths(theme.border.width),
     borderRadius: theme.border.radius,
     borderColor: theme.border.color,
   });

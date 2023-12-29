@@ -8,6 +8,7 @@ import { ThemeColorKey } from "@/theme";
 import kebabCase from "lodash/kebabCase";
 import startCase from "lodash/startCase";
 import { css } from "@emotion/react";
+import { Mixins } from "@/utils";
 
 const colorKeys: ThemeColorKey[] = [
   "standard",
@@ -66,8 +67,8 @@ export function ButtonStory(_props: ButtonProps) {
             key={buttonStyle}
             css={css({
               borderStyle: "solid",
-              borderWidth: "1px 0px",
-              paddingBottom: "1rem",
+              ...Mixins.borderWidths({ vertical: 1 }),
+              ...Mixins.spacing("padding", { bottom: "1rem" }),
             })}
           >
             <h1>{startCase(buttonStyle)}</h1>
@@ -75,14 +76,17 @@ export function ButtonStory(_props: ButtonProps) {
               ({ id: varID, label: varLabel, ...btnProps }) => (
                 <div
                   key={varID}
-                  css={css({ margin: "0 1rem", paddingBottom: "1rem" })}
+                  css={css({
+                    ...Mixins.spacing("margin", { horizontal: "1rem" }),
+                    ...Mixins.spacing("padding", { bottom: "1rem" }),
+                  })}
                 >
                   <h2>{varLabel}</h2>
                   <div
                     css={css({
                       display: "flex",
                       flexWrap: "wrap",
-                      margin: "0 1rem",
+                      ...Mixins.spacing("margin", { horizontal: "1rem " }),
                     })}
                   >
                     {colorKeys.map((colorKey) => (
@@ -100,7 +104,12 @@ export function ButtonStory(_props: ButtonProps) {
                         }
                         variant={variant}
                         colorKey={colorKey}
-                        css={css({ margin: "0.5rem 1rem" })}
+                        css={css({
+                          ...Mixins.spacing("margin", {
+                            horizontal: "1rem",
+                            vertical: "0.5rem",
+                          }),
+                        })}
                         buttonStyle={buttonStyle}
                       />
                     ))}
@@ -109,7 +118,7 @@ export function ButtonStory(_props: ButtonProps) {
                     css={css({
                       display: "flex",
                       flexWrap: "wrap",
-                      margin: "0 1rem",
+                      ...Mixins.spacing("margin", { horizontal: "1rem" }),
                     })}
                   >
                     {colorKeys.map((colorKey) => (
@@ -127,7 +136,12 @@ export function ButtonStory(_props: ButtonProps) {
                         }
                         variant={variant}
                         colorKey={colorKey}
-                        css={css({ margin: "0.5rem 1rem" })}
+                        css={css({
+                          ...Mixins.spacing("margin", {
+                            horizontal: "1rem",
+                            vertical: "0.5rem",
+                          }),
+                        })}
                         buttonStyle={buttonStyle}
                         disabled
                       />

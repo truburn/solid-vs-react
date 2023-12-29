@@ -3,6 +3,7 @@ import { Button as ButtonComponent, ButtonVariant } from "@/elements/Button";
 import { faRocketLaunch } from "@fortawesome/pro-duotone-svg-icons";
 import { colorKey, fontKey, icon } from "@/storybook/argTypes";
 import { ButtonStory } from "./ButtonStory";
+import { Mixins } from "@/utils";
 
 const meta: Meta<typeof ButtonComponent> = {
   component: ButtonComponent,
@@ -97,12 +98,12 @@ export const CustomButton: Story = {
     label: "Custom",
     variant: ButtonVariant.CUSTOM,
     style: {
-      borderWidth: 2,
+      ...Mixins.borderWidths(2),
       borderTopLeftRadius: 20,
       borderBottomRightRadius: 20,
       borderTopRightRadius: 4,
       borderBottomLeftRadius: 4,
-      padding: "0.25rem 1rem",
+      ...Mixins.spacing("padding", { vertical: "0.25rem", horizontal: "1rem" }),
     },
   },
 };

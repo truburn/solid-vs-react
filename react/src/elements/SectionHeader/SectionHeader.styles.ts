@@ -1,19 +1,20 @@
+import { Mixins } from "@/utils";
 import { css, useTheme } from "@emotion/react";
 
 export function useSectionHeaderStyles() {
   const theme = useTheme();
 
   const root = css({
-    margin: theme.spacing.medium,
-    padding: theme.spacing.medium,
+    ...Mixins.spacing("margin", theme.spacing.medium),
+    ...Mixins.spacing("padding", theme.spacing.medium),
     fontFamily: theme.fonts.heading.name,
     fontSize: "1.25rem",
     lineHeight: 1,
     color: theme.colors.primary.main,
     borderStyle: "solid",
-    borderWidth: 0,
+    ...Mixins.borderWidths(0),
     "h2&": {
-      borderBottomWidth: theme.border.width,
+      ...Mixins.borderWidths({ bottom: theme.border.width }),
     },
     "h3&": {
       fontSize: "1rem",
@@ -35,11 +36,15 @@ export function useSectionHeaderStyles() {
       fontFamily: theme.fonts.default.name,
       color: theme.colors.standard.altMain,
       width: "fit-content",
-      borderBottomWidth: theme.border.width,
-      paddingBottom: theme.spacing.thin,
-      paddingLeft: theme.spacing.small,
-      paddingRight: theme.spacing.small,
-      marginLeft: theme.spacing.large,
+      ...Mixins.spacing("margin", {
+        all: theme.spacing.medium,
+        left: theme.spacing.large,
+      }),
+      ...Mixins.spacing("padding", {
+        horizontal: theme.spacing.small,
+        bottom: theme.spacing.thin,
+        top: theme.spacing.medium,
+      }),
     },
   });
 

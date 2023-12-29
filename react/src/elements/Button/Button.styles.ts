@@ -2,6 +2,7 @@ import { css, useTheme, CSSObject } from "@emotion/react";
 import { ButtonProps, ButtonStyle, ButtonVariant } from "@/elements/Button";
 import { ThemeColor } from "@/theme";
 import { useMemo } from "react";
+import { Mixins } from "@/utils";
 
 export function useButtonStyles(props: Partial<ButtonProps> = {}) {
   const theme = useTheme();
@@ -56,7 +57,7 @@ export function useButtonStyles(props: Partial<ButtonProps> = {}) {
   const buttonBorders = useMemo<CSSObject>(() => {
     const tmpData: CSSObject = {
       borderStyle: "solid",
-      borderWidth: 0,
+      ...Mixins.borderWidths(0),
       borderRadius: 0,
     };
 
@@ -90,12 +91,10 @@ export function useButtonStyles(props: Partial<ButtonProps> = {}) {
     const thinSpacing = "0.125em";
     const medSpacing = "0.5em";
 
-    const tmpData: CSSObject = {
-      paddingTop: 0,
-      paddingBottom: 0,
-      paddingLeft: thinSpacing,
-      paddingRight: thinSpacing,
-    };
+    const tmpData: CSSObject = Mixins.borderWidths({
+      vertical: 0,
+      horizontal: thinSpacing,
+    });
 
     if (iconButton) {
       tmpData.paddingTop = thinSpacing;
@@ -133,8 +132,11 @@ export function useButtonStyles(props: Partial<ButtonProps> = {}) {
           fontSize: "1rem",
           lineHeight: 1,
           outline: "none",
-          margin: 0,
-          padding: "0.25em 0.5em",
+          ...Mixins.spacing("margin", { all: 0 }),
+          ...Mixins.spacing("padding", {
+            vertical: "0.25rem",
+            horizontal: "0.5rem ",
+          }),
           cursor: "pointer",
           transition: "ease all 0.5s",
           ...buttonColors,
@@ -146,7 +148,7 @@ export function useButtonStyles(props: Partial<ButtonProps> = {}) {
         });
 
   const label = css({
-    padding: theme.spacing.thin,
+    ...Mixins.spacing("padding", theme.spacing.thin),
   });
 
   const icon = css({
