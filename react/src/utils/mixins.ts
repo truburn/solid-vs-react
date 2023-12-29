@@ -20,7 +20,7 @@ interface SizingProps {
 type SizesProps = SizingTypes | SizingTypes[] | SizingProps;
 
 function getSizes(sizes: SizingProps | SizingTypes[]) {
-  const tmpSizes: SizingProps = {};
+  let tmpSizes: SizingProps = {};
 
   if (Array.isArray(sizes)) {
     if (sizes.length === 2) {
@@ -32,6 +32,8 @@ function getSizes(sizes: SizingProps | SizingTypes[]) {
       tmpSizes.bottom = sizes[2];
       tmpSizes.left = sizes[3];
     }
+  } else {
+    tmpSizes = sizes;
   }
 
   const defaultSize = tmpSizes.all ?? 0;
