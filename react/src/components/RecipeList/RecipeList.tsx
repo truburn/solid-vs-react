@@ -6,12 +6,12 @@ import uniqueId from "lodash/uniqueId";
 
 /** Display a list of recipes */
 export function RecipeList(_props: RecipeListProps) {
-  const { className, style, id = uniqueId("recipe-list-"), ...props } = _props;
+  const { asTiles, id = uniqueId("recipe-list-"), ...props } = _props;
   const { list = [] } = useAppContext();
-  const classes = useRecipeListStyles(props);
+  const classes = useRecipeListStyles({ asTiles });
 
   return (
-    <div css={classes.root} className={className} style={style} id={id}>
+    <div css={classes.root} {...props} id={id}>
       <Scrollbar showScrollbar>
         <ul css={classes.list}>
           {list.map((recipe, idx) => {

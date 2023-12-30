@@ -29,7 +29,7 @@ export function useRecipeListStyles(props: Partial<RecipeListProps>) {
         all: theme.spacing.medium,
       }),
       display: "flex",
-      width: asTiles ? 206 : "auto",
+      width: asTiles ? 412 : "auto",
       boxSizing: "border-box",
       "& > div": {
         flex: 1,
