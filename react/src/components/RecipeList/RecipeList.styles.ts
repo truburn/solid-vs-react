@@ -31,9 +31,6 @@ export function useRecipeListStyles(props: Partial<RecipeListProps>) {
       display: "flex",
       width: asTiles ? 408 : "auto",
       boxSizing: "border-box",
-      "& > div": {
-        flex: 1,
-      },
     },
   });
 

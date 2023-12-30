@@ -31,7 +31,7 @@ export function Recipe() {
 
   return (
     <div css={classes.root}>
-      <div css={classes.sidePanel}>
+      <div css={classes.sidePanel} style={{ width: 350 }}>
         <RecipeList />
       </div>
       <Content title={recipe?.name}>

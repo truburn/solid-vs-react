@@ -3,7 +3,7 @@ import { css, useTheme } from "@emotion/react";
 
 export function usePageHeaderStyles() {
   const theme = useTheme();
-  const colorGroup = theme.colors.secondary;
+  const colorGroup = theme.colors.primary;
 
   const root = css({
     width: "fit-content",
@@ -15,8 +15,8 @@ export function usePageHeaderStyles() {
     }),
     fontFamily: theme.fonts.heading.name,
     fontSize: "1.5rem",
-    background: colorGroup.altContrast,
-    color: colorGroup.altMain,
+    background: colorGroup.contrast,
+    color: colorGroup.main,
     lineHeight: 1,
     transform: "rotate(-2deg)",
     borderStyle: "solid",

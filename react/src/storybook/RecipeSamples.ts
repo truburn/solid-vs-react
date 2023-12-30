@@ -3,7 +3,8 @@ const recipes: Recipe[] = [
     recipeID: "recipe001",
     name: "Grilled Cheese Sandwich",
     author: "Edward Seburn",
-    summary: "A crispy, toasted sandwich with yummy, ooey-gooey cheese!",
+    summary:
+      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium.",
     meal: ["lunch", "dinner", "snack"],
     cuisine: "American",
     created: "2020-09-09T06:30:00.000Z",
@@ -22,7 +23,8 @@ const recipes: Recipe[] = [
     recipeID: "recipe003",
     name: "Scrambled Eggs",
     author: "Mommy Seburn",
-    summary: "Fluffy and filling scrabled eggs.",
+    summary:
+      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium.",
     meal: [],
     created: "1982-01-05T09:50:00.000Z",
   },

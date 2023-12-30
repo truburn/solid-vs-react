@@ -18,7 +18,11 @@ export function RecipeList(_props: RecipeListProps) {
             const recipeKey = [recipe.recipeID, idx].join("-");
             return (
               <li key={recipeKey}>
-                <RecipeCard id={recipeKey} recipe={recipe} />
+                <RecipeCard
+                  id={recipeKey}
+                  colorKey="secondary"
+                  recipe={recipe}
+                />
               </li>
             );
           })}
