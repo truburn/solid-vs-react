@@ -31,14 +31,7 @@ export function Scrollbar(_props: ScrollbarProps) {
   return (
     <div css={classes.root} id={elID} className={className} style={customStyle}>
       <div css={classes.contentWrapper}>
-        <div
-          css={classes.content}
-          ref={contentRef}
-          onScroll={moveThumb}
-          style={{
-            ...((showScrollbar || disableTrack) && { marginRight: 0 }),
-          }}
-        >
+        <div css={classes.content} ref={contentRef} onScroll={moveThumb}>
           {children}
         </div>
       </div>
