@@ -3,6 +3,7 @@ import { RecipeCardProps, useRecipeCardStyles } from "@/components/RecipeCard";
 import { DateTime } from "@/elements/DateTime";
 import uniqueId from "lodash/uniqueId";
 import { useMemo } from "react";
+import { Link } from "react-router-dom";
 
 export function RecipeCard(_props: RecipeCardProps) {
   const { recipe, id, colorKey, ...props } = _props;
@@ -18,8 +19,8 @@ export function RecipeCard(_props: RecipeCardProps) {
   if (!recipe) return null;
 
   return (
-    <a
-      href={`/recipe/${recipe.recipeID}`}
+    <Link
+      to={`/recipe/${recipe.recipeID}`}
       css={classes.root}
       {...props}
       id={elID}
@@ -36,6 +37,6 @@ export function RecipeCard(_props: RecipeCardProps) {
           <DateTime date={recipe.created} />
         </div>
       </div>
-    </a>
+    </Link>
   );
 }

@@ -8,6 +8,7 @@ import { Title, Description, Subtitle } from "@storybook/blocks";
 import React from "react";
 import { ImportStatement, PropsTable } from "./blocks";
 import { withAppContext } from "../src/storybook/withAppContext";
+import { withRouter } from "storybook-addon-react-router-v6";
 
 const preview: Preview = {
   parameters: {
@@ -40,6 +41,7 @@ const preview: Preview = {
     },
   },
   decorators: [
+    withRouter,
     withThemeFromJSXProvider({
       themes: {
         theme,
