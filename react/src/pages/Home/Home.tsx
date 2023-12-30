@@ -15,7 +15,7 @@ export function Home() {
 
   return (
     <Content title="My Favorite Recipes">
-      <RecipeList />
+      <RecipeList asTiles />
     </Content>
   );
 }
