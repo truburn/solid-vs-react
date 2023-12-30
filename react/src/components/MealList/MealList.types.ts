@@ -1,6 +1,6 @@
-import { ThemeColorKey } from "@/theme";
-
-export interface MealListProps extends MCComponent {
+export interface MealListProps
+  extends MCComponent,
+    Pick<MCStyleKeys, "colorKey"> {
   align?: "left" | "right";
-  colorKey?: ThemeColorKey;
+  meals?: Recipe["meal"];
 }
