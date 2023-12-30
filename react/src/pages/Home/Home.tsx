@@ -14,7 +14,7 @@ export function Home() {
   }, [list]);
 
   return (
-    <Content title="My Favorite Recipes">
+    <Content title="My Favorite Recipes" tools={{ add: true }}>
       <RecipeList asTiles />
     </Content>
   );

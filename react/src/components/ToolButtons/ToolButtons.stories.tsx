@@ -9,4 +9,12 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const ToolButtons: Story = {};
+export const ToolButtons: Story = {
+  args: {
+    tools: {
+      edit: true,
+      add: true,
+      cancel: true,
+    },
+  },
+};

@@ -34,7 +34,7 @@ export function Recipe() {
       <div css={classes.sidePanel} style={{ width: 350 }}>
         <RecipeList />
       </div>
-      <Content title={recipe?.name}>
+      <Content title={recipe?.name} tools={{ edit: true, add: true }}>
         <div css={classes.content}>
           <Ingredients />
           <hr css={classes.divider} />
