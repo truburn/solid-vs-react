@@ -13,9 +13,13 @@ export function useRecipeCardStyles(
     flexDirection: "column",
     textDecoration: "none",
     color: colorGroup.main,
-    transition: "ease all 0.5s",
+    transition: "ease all 0.25s",
     "&:hover": {
       color: colorGroup.main,
+      outlineOffset: theme.spacing.small,
+      outlineWidth: 2,
+      outlineColor: colorGroup.main,
+      outlineStyle: "solid",
     },
   });
 
@@ -96,7 +100,7 @@ export function useRecipeCardStyles(
     fontWeight: theme.fonts.default.weight?.light,
     ...Mixins.spacing("padding", {
       bottom: theme.spacing.thin,
-      left: theme.spacing.small,
+      horizontal: theme.spacing.small,
       top: theme.spacing.medium,
     }),
     opacity: 0.75,
