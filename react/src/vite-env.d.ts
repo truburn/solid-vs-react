@@ -27,12 +27,16 @@ declare global {
   type MCComponent = Omit<MCElement, "children">;
 
   interface MCInput extends MCElement, MCStyleKeys {
+    /** The label to display with the field */
+    label?: string;
     /** Current value of the input field */
     value?: any;
     /** Default value to use if the value is undefined */
     defaultValue?: any;
     /** Action to take when the value is changed */
     onChange?: (newValue: any, event?: EventHandler) => void;
+    /** Disable the field */
+    disabled?: boolean;
   }
 
   interface Ingredient {

@@ -8,6 +8,13 @@ const recipes: Recipe[] = [
     meal: ["lunch", "dinner", "snack"],
     cuisine: "American",
     created: "2020-09-09T06:30:00.000Z",
+    servings: {
+      total: 1,
+      size: {
+        qty: 1,
+        unit: "sandwich",
+      },
+    },
   },
   {
     recipeID: "recipe002",
@@ -18,6 +25,13 @@ const recipes: Recipe[] = [
     meal: ["lunch", "dinner", "snack"],
     cuisine: "American",
     created: "1986-07-21T16:20:00.000Z",
+    servings: {
+      total: 2,
+      size: {
+        qty: 1,
+        unit: "half",
+      },
+    },
   },
   {
     recipeID: "recipe003",
@@ -27,6 +41,9 @@ const recipes: Recipe[] = [
       "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium.",
     meal: [],
     created: "1982-01-05T09:50:00.000Z",
+    servings: {
+      total: 1,
+    },
   },
   {
     recipeID: "recipe004",
@@ -36,6 +53,13 @@ const recipes: Recipe[] = [
       "Little circles of happiness! Even better with warm and sticky syrup drizzled on top.",
     meal: ["breakfast"],
     created: "2023-12-23T07:31:00.000Z",
+    servings: {
+      total: 4,
+      size: {
+        qty: 2,
+        unit: "pancakes",
+      },
+    },
   },
 ];
 

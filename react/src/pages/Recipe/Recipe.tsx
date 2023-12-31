@@ -9,6 +9,7 @@ import { useRecipeStyles } from "@/pages/Recipe";
 import { DateTime } from "@/elements/DateTime";
 import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
+import { ServingSize } from "@/components/ServingSize";
 
 /** Component to render the recipe page */
 export function Recipe() {
@@ -44,6 +45,12 @@ export function Recipe() {
       <div css={classes.sidePanel}>
         <SectionHeader title="Little Details" />
         <p css={classes.summary}>{recipe?.summary}</p>
+        {recipe?.servings && (
+          <>
+            <SectionHeader title="Servings" depth={3} />
+            <ServingSize css={classes.info} />
+          </>
+        )}
         <SectionHeader title="Suggested Meal(s)" depth={3} />
         <MealList css={classes.info} />
         {recipe?.cuisine && (
